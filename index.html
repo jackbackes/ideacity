@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
 	<link rel="stylesheet" type="text/css" href="./css/ripples.css">
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap-material-design.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
@@ -14,28 +15,204 @@
 <body>
 
 
+<div class="container top-container">
+	<div class="container jumbotron">
+		<h1>Make Dallas Better!</h1>
 
-<div class="container">
-	<h1>Make Dallas Better!</h1>
+	</div>
+	<div class="container jumbotron">
+		<div class="col-md-3"><button class="btn btn-primary" data-toggle="collapse" data-target="#add-my-idea">Add Your Idea!</button></div>
+		<div id="add-my-idea" class="col-md-9 collapse">
+			<p>Add your ideas on how Dallas can be a better place!</p>
+			<form class="form-horizontal">
+				<div class="form-group inputShadow" id="idea-title">
+					<label for="input-idea-title">Idea</label>
+					<input type ="text" class="form-control inputShadow" id="input-idea-title" placeholder="Dallas should..."></input>
+				</div>
+				<div class="form-group inputShadow" id="idea-description">
+					<label for="input-idea-description">Description</label>
+					<textarea class="form-control inputShadow" id="input-idea-description" placeholder="More info..." rows="4"></textarea>
+				</div>
+				<div class="form-group inputShadow" id="connect-with-facebook">
+					<label for="facebook-link">Connect with Facebook</label><br>
+					<a href="#" id="facebook-link">Connect with Facebook...</a>
+				</div>
+				<div class="form-group inputShadow" id="idea-tag">
+					<label for="input-idea-tag">Associate your Idea with a City</label>
+					<select class="form-control" id="input-idea-tag">
+						<option>Educated</option>
+						<option>Entrepreneurial</option>
+						<option>Healthy</option>
+						<option>Literary</option>
+						<option>Physical</option>
+					</select>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit My Idea</button>
 
-</div>
-<div class="container">
-	<p>Add your ideas on how Dallas can be a better place!</p>
-	<form>
-	</form>
-</div>
-<div class="container" id="idea-list">
-	<ul class="postIts">
-		<li class="postIt">
-		</li>
-	</ul>
+			</form>
+		</div>
+	</div>
+	<div class="container jumbotron" id="idea-list">
+		<h1>Educated City Ideas</h1>
+		<ul class="postIts jumbotron canaryYellow">
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<div class="postItShadow"></div>
+		</ul>
+
+	</div>
+	<div class="container jumbotron" id="idea-list">
+		<h1>Entrepreneurial City Ideas</h1>
+		<ul class="postIts jumbotron greenPostIt">
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<div class="postItShadow"></div>
+		</ul>
+
+	</div>
+	<div class="container jumbotron" id="idea-list">
+		<h1>Healthy City Ideas</h1>
+		<ul class="postIts jumbotron pinkPostIt">
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<div class="postItShadow"></div>
+		</ul>
+
+	</div>
+	<div class="container jumbotron" id="idea-list">
+		<h1>Literary City Ideas</h1>
+		<ul class="postIts jumbotron redPostIt">
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<div class="postItShadow"></div>
+		</ul>
+
+	</div>
+	<div class="container jumbotron" id="idea-list">
+		<h1>Physical City Ideas</h1>
+		<ul class="postIts jumbotron orangePostIt">
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+			</li>
+			<div class="postItShadow"></div>
+		</ul>
+
+	</div>
 </div>
 
 	<script src="./js/jquery.js"></script>
 	<script src="./js/npm.js"></script>
 	<script src="./js/bootstrap.js"></script>
-	<script src="./js/bootstrap-theme.js"></script>
-	<script src="./js/materials.js"></script>
+	<script src="./js/material.js"></script>
 	<script src="js.js"></script>
 </body>
 
