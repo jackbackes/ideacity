@@ -7,11 +7,12 @@
 }
 
 .postIts {
-	float: left;
 	width: 100%;
-	overflow-x: hidden;
+	overflow-x: scroll;
 	white-space: nowrap;
 	position:relative;
+	float:left;
+	display:block;
 }
 
 .postIt {
@@ -43,9 +44,19 @@
 }
 
 .defaultAvatar {
-	width: 60px;
-	height: 60px;
-	background: url(./images/defaultAvatar.png) left top;
+	width: 80px;
+	height: 80px;
+	background: url(./images/defaultAvatar.png) 70px 0px;
+	background-size: 260% 200%;
+	position:absolute; 
+	bottom:5px; right:5px;
+
+}
+
+.defaultAvatar1 {
+	width: 80px;
+	height: 80px;
+	background: url(./images/defaultAvatar.png) 140px 0px;
 	background-size: 260% 200%;
 	position:absolute; 
 	bottom:5px; right:5px;
