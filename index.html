@@ -27,10 +27,10 @@
 			<form class="form-horizontal">
 				<div class="form-group inputShadow" id="idea-title">
 					<label for="input-idea-title">Idea</label>
-					<input type ="text" class="form-control inputShadow" id="input-idea-title" placeholder="Dallas should..."></input>
+					<input type ="text" class="form-control inputShadow" id="input-idea-input" placeholder="Dallas should..."></input>
 				</div>
 				<div class="form-group inputShadow" id="idea-description">
-					<label for="input-idea-description">Description</label>
+					<label for="input-idea-description-title">Description</label>
 					<textarea class="form-control inputShadow" id="input-idea-description" placeholder="More info..." rows="4"></textarea>
 				</div>
 				<div class="form-group inputShadow" id="connect-with-facebook">
@@ -39,7 +39,7 @@
 				</div>
 				<div class="form-group inputShadow" id="idea-tag">
 					<label for="input-idea-tag">Associate your Idea with a City</label>
-					<select class="form-control" id="input-idea-tag">
+					<select class="form-control" id="input-idea-category">
 						<option>Educated</option>
 						<option>Entrepreneurial</option>
 						<option>Healthy</option>
@@ -47,14 +47,21 @@
 						<option>Physical</option>
 					</select>
 				</div>
-				<button type="submit" class="btn btn-primary">Submit My Idea</button>
+				<button type="button" class="btn btn-primary" id="submitIdea">Submit My Idea</button>
 
 			</form>
 		</div>
 	</div>
 
 		<h1>Educated City Ideas</h1>
-		<ul class="postIts jumbotron canaryYellow">
+		<ul class="postIts jumbotron canaryYellow" id="educated">
+			<li class="postIt container jumbotron">
+				<h3>This is my idea</h3>
+				<p>Idea Description</p>
+				<span>idea tag 1</span> <span>idea tag 2</span>
+				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
+				<div class="defaultAvatar1 img-circle" style=""></div>
+			</li>
 			<li class="postIt container jumbotron">
 				<h3>This is my idea</h3>
 				<p>Idea Description</p>
@@ -74,19 +81,13 @@
 				<span>idea tag 1</span> <span>idea tag 2</span>
 				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
 			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
 			<!--<div class="postItShadow"></div>-->
 		</ul>
 
 
 
 		<h1>Entrepreneurial City Ideas</h1>
-		<ul class="postIts jumbotron greenPostIt">
+		<ul class="postIts jumbotron greenPostIt" id="entrepreneurial">
 			<li class="postIt container jumbotron">
 				<h3>This is my idea</h3>
 				<p>Idea Description</p>
@@ -116,7 +117,7 @@
 
 
 		<h1>Healthy City Ideas</h1>
-		<ul class="postIts jumbotron pinkPostIt">
+		<ul class="postIts jumbotron pinkPostIt" id="healthy">
 			<li class="postIt container jumbotron">
 				<h3>This is my idea</h3>
 				<p>Idea Description</p>
@@ -146,7 +147,7 @@
 
 
 		<h1>Literary City Ideas</h1>
-		<ul class="postIts jumbotron redPostIt">
+		<ul class="postIts jumbotron redPostIt" id="literary">
 			<li class="postIt container jumbotron">
 				<h3>This is my idea</h3>
 				<p>Idea Description</p>
@@ -176,7 +177,7 @@
 
 
 		<h1>Physical City Ideas</h1>
-		<ul class="postIts jumbotron orangePostIt">
+		<ul class="postIts jumbotron orangePostIt" id="physical">
 			<li class="postIt container jumbotron">
 				<h3>This is my idea</h3>
 				<p>Idea Description</p>
