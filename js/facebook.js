@@ -41,7 +41,7 @@
       xfbml      : true,
       version    : 'v2.5'
     });
-  };
+
 
 
  
