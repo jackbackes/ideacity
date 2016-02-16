@@ -30,7 +30,7 @@ $(document).ready(function() {
 			);
 	};
 
-//functions
+//submitting an idea
 	var myForm = {};
 	$("#submitIdea").click(function() {
 		myForm = {
@@ -41,10 +41,22 @@ $(document).ready(function() {
 		postIdea(myForm.idea, myForm.ideaDescription, myForm.category);
 
 		console.log(myForm, "success");
+		//reset the form
+		$(this).closest('form').find('input[type=text], textarea').val('');
+		console.log('form reset');
+		//close the submit field
+		$('#add-my-idea').collapse('hide');
+		console.log('idea field collapsed');
+
 	});
 
 
 //page initialization
 	//populate JSON data
+
+
+//forms
+	//clear form
+
 
 });

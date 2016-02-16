@@ -1,10 +1,14 @@
 //the Node server backend for Ideacity
 
-var ideaServer = '127.0.0.1';
+var ideaServer = 'ideacity.thisismotive.org';
 var ideaPort = 1337;
 var http = require('http');
 var url = require('url');
 
+// Get required Modules
+console.log('initializing express');
+var express = require('express'); console.log('express initialized');
+var app = express();
 
 //start the service
 var Start = function(route, serve, reqtype) {
@@ -58,6 +62,7 @@ var Start = function(route, serve, reqtype) {
 };
  
  exports.Start = Start;
+
 
 
 //Deprecated createserver function

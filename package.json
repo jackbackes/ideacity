@@ -1,0 +1,23 @@
+{
+	"name"	: 	"ideacity",
+	"version"	: 	"0.1.0",
+	"description"	: 	"crowdsource your city",
+	"author"	: 	"John Backes <jbackes@thisismotive.com>",
+	"main"	: 	"index.js",
+	"repository"	:
+		{
+			"type":"git",
+			"url":"https://github.com/thejohnbackes/ideacity"
+		},
+	"bugs"	:
+		{
+			"url":"https://github.com/thejohnbackes/ideacity/issues"
+		},
+	"dependencies"	:
+		{
+			"express"	: 	"4.2.x"
+		},
+	"private"	: 	true,
+	"analyze"	: 	true,
+	"license"	: 	"MIT"
+}
