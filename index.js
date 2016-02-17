@@ -5,6 +5,7 @@ console.log("Initializing server");
 var server = require('./js/server.js');
 var router = require('./js/router.js');
 var pageserver = require('./js/pageserver.js');
+var jsDotjs = require('js.js');
 
 //Start the server
 
