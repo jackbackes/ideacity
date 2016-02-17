@@ -39,6 +39,8 @@ $(document).ready(function() {
 			"category": $("#input-idea-category").val().toLowerCase()
 		}
 		postIdea(myForm.idea, myForm.ideaDescription, myForm.category);
+		fs.writeFile("./js/idea.json", JSON.stringify(myForm), "utf8");
+		cityOfIdeas[cityOfIdeas.length] = myForm;
 
 		console.log(myForm, "success");
 		//reset the form
@@ -53,6 +55,8 @@ $(document).ready(function() {
 
 //page initialization
 	//populate JSON data
+
+
 
 
 //forms
