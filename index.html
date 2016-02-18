@@ -20,9 +20,18 @@
 <!--testing facebook like button-->
 
 
+<script>
+	console.log('loading html...');
 
+</script>
 <div class="container top-container">
 
+	<div id="testform" class="container">
+		<form class="form-horizontal">
+			<input type="text" id="testforminput" name="testdata"></input>
+			<input type="submit" id="testformsubmit"></input>
+		</form>
+	</div>
 
 
 
@@ -71,7 +80,7 @@
 					<option>Physical</option>
 				</select>
 			</div>
-			<button type="button" class="btn btn-primary" id="submitIdea">Submit My Idea</button>
+			<button type="button" class="btn btn-primary" id="submitIdea" onclick="">Submit My Idea</button>
 
 		</form>
 	</div>
@@ -232,12 +241,22 @@
 
 </div>
 
+<script>
+	console.log('html loaded on index.html');
+	console.log('loading scripts from index.html');
+
+</script>
 
 	<script src="./js/jquery.js"></script>
 	<script src="./js/npm.js"></script>
 	<script src="./js/bootstrap.js"></script>
 	<script src="./js/material.js"></script>
-	<!--<script src="js.js"></script>-->
+	<script src="js.js"></script>
+
+<script>
+	console.log('scripts loaded from index.html');
+</script>
+
 </body>
 
 </html>

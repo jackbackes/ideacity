@@ -6,7 +6,7 @@ $.material.init();
 //jquery init
 $(document).ready(function() {
 
-	console.log("it worked!");
+	console.log("jQuery up and running on js.js");
 
 //JSON call
 	var cityOfIdeas;
@@ -39,7 +39,23 @@ $(document).ready(function() {
 			"category": $("#input-idea-category").val().toLowerCase()
 		}
 		postIdea(myForm.idea, myForm.ideaDescription, myForm.category);
-		fs.writeFile("./js/idea.json", JSON.stringify(myForm), "utf8");
+		/*$.ajax({
+			url: 'http://' + ideaServer,
+			        // dataType: "jsonp",
+			        data: '{"data": "TEST"}',
+			        type: 'POST',
+			        jsonpCallback: 'callback', // this is not relevant to the POST anymore
+			        success: function (data) {
+			            var ret = jQuery.parseJSON(data);
+			            //$('#lblResponse').html(ret.msg);
+			            console.log('Success: ')
+			        },
+			        error: function (xhr, status, error) {
+			            console.log('Error: ' + error.message);
+			            $('#lblResponse').html('Error connecting to the server.');
+			        },
+		})*/
+		/*fs.appendFile("./js/idea.json", JSON.stringify(myForm), "utf8");*/
 		cityOfIdeas[cityOfIdeas.length] = myForm;
 
 		console.log(myForm, "success");
@@ -63,4 +79,4 @@ $(document).ready(function() {
 	//clear form
 
 
-});
+}); //closing jquery

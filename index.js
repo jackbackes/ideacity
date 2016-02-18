@@ -1,15 +1,16 @@
 console.log("Initializing server");
 
 
+
 // Get required components
 var server = require('./js/server.js');
 var router = require('./js/router.js');
 var pageserver = require('./js/pageserver.js');
-var jsDotjs = require('js.js');
 
 //Start the server
 
-server.Start(router.route, pageserver.serve, pageserver.reqtype);
+server.Start(router.route, pageserver.serve, pageserver.reqtype, pageserver.postToJSON);
+console.log('server started on index.js');
 
 //check authorization
 function checkAuth(req,res,next) {
@@ -26,7 +27,4 @@ function checkAuth(req,res,next) {
 
 }
 
-
-
-
-
+console.log('Completed index.js');
