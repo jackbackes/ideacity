@@ -2,7 +2,7 @@
 var path = require('path');
 
 //Router configuration
-var isLive = 'n';
+var isTest = 'n';
 
 //Routes the request, so that a proper file can be found for it!
 var route = function(pathname) {
@@ -19,9 +19,9 @@ var route = function(pathname) {
 	//otherwise,
 	if (pathname === '' || pathname === 'index' || pathname === 'home' || pathname === 'index.html' || pathname === 'home.html') {
 		// If it should be routed to the home page.
-		if(isLive === 'n') {
+		if(isTest === 'y') {
 			path += 'indextest.html'; //set to test page
-		} else if (isLive === 'y') {
+		} else if (isTest === 'n') {
 			path += 'index.html'; //set to index page
 		} else {
 			path += 'index.html'; //set to test page and throw configuration error to console

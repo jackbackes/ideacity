@@ -10,7 +10,8 @@ console.log('running configuration tests');
 //Configuration tests
 //Set Server Configuration
 	var appConfig = {
-		isTest: 'y'
+		isTest: 'n',
+		isLive: 'n'
 	};
 
 	prompt.start();
