@@ -1,32 +1,9 @@
 {
 	"ideas": [
 		{
-			"idea": "lorem ipsum lorem ipsum",
-			"ideaDescription": "lorem ipsum lorem ipsum",
-			"ideaTags": [
-				{
-					"key": "tag 1"
-				},
-				{
-					"key": "tag 2"
-				}
-			],
-			"category": "educated",
-			"contributor": "userName"
-		},
-		{
-			"idea": "lorem ipsum lorem ipsum",
-			"ideaDescription": "lorem ipsum lorem ipsum",
-			"ideaTags": [
-				{
-					"key": "tag 1"
-				},
-				{
-					"key": "tag 2"
-				}
-			],
-			"category": "educated",
-			"contributor": "userName"
+			"idea": "Welcoming / Intentionally working to connect all the new transplants",
+			"ideaDescription": "We have thousands of people moving to Dallas each year.  As a transplant myself I find that I gravitate towards other transplants because they are willing to embrace me and make a place for me.  Historically rooted people, groups and institutions are only willing to open their arms to newcomers if they adopt the Dallas way.   As a city of innovation we need to be open to the new ways of doing things and experiences that are coming with all our new neighbors. ",
+			"category": "entrepreneurial"
 		}
 	]
 }
