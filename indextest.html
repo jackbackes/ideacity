@@ -36,15 +36,39 @@
 
 
 	<script>
-		var requestIdea = function(ideaMethod) {
+		var myJSON = 
+			{				
+				"idea": "lorem ipsum lorem ipsum",
+				"ideaDescription": "lorem ipsum lorem ipsum",
+				"ideaTags": [
+					{
+						"key": "tag 1"
+					},
+					{
+						"key": "tag 2"
+					}
+				],
+				"category": "educated",
+				"contributor": "userName"
+			};
+		var requestIdea = function(ideaMethod, ideaData, ideaPath) {
 			try{
 				console.log('trying XML request');
+				//create next XML Request
 				var xhttp = new XMLHttpRequest();
-				xhttp.open(ideaMethod,"./js/ideas.json",false);
-				console.log('XML ' + ideaMethod + ' request opened. Sending.');
-				xhttp.send();
+				//open XML Request using specified method. synchronous.
+				xhttp.open(ideaMethod,ideaPath,true);
+				//set request header to JSON content type
+				xhttp.setRequestHeader("Content-Type", "application/json");
+				var JSONdata = JSON.stringify(ideaData);
+				console.log('XML ' + ideaMethod + ' request opened.');
+				console.log('Sending ' + JSONdata);
+				//sending JSON Data
+				//xhttp.send(JSONdata);
+				//print the ready state (should be 4)
 				console.log('readyState: ' +xhttp.readyState);
-				if(xhttp.open.async === false) {
+				//check if asynchronous
+				/*if(xhttp.open.async === false) {
 					console.log('using synchronous xhttp. \nreadyState = ' + xhttp.readyState + '\n Status is ' + xhttp.status);
 					console.log(JSON.parse(xhttp.responseText));
 				} else if (xhttp.open.async === true) {
@@ -64,9 +88,10 @@
 						};
 					};
 				} else {
+					//if there's a problem with the call, revert to default
 					console.log('async broken. \nreadyState = ' + xhttp.readyState + '\n Status is ' + xhttp.status);
 					try {
-						console.log(xhttp.responseText);
+						console.log('responseText: \n' + xhttp.responseText);
 						console.log('JSON Printed. Yay!');
 					}
 					catch(err)
@@ -74,7 +99,35 @@
 							console.log('Problem with JSON parse');
 						};
 
+				};*/
+
+				xhttp.onReadyStateChange = function () {
+					console.log('xhttp readyState has changed. Now ' + xhttp.readyState + '\n Status is ' + xhttp.status);
+					if (xhttp.readyState == 4) {
+						console.log('XML connection worked!');
+						try{
+							console.log(JSON.parse(xhttp.responseText));
+							console.log('JSON Printed');
+						}
+						catch(err){
+							console.log('Problem with JSON parse')
+						};
+
+					};
 				};
+
+		        xhttp.onreadystatechange = function() {
+		            console.log('onreadystatechange');
+		            if (xhttp.readyState == 4 && xhttp.status == 200) {
+		                alert(xhttp.responseText);
+		            }
+		            else {
+		                console.log('readyState=' + xhttp.readyState + ', status: ' + xhttp.status);
+		            }
+		        }
+
+				xhttp.send(JSONdata);
+
 			}
 			catch(err) {
 				console.log("whoops, it didn't work...")
@@ -83,17 +136,18 @@
 	</script>
 
 	<div id="testform" class="container jumbotron">
-		<button onclick="requestIdea('POST')" class="btn btnprimary">Send Idea</button>
+		<button onclick="requestIdea('POST', myJSON, './private/ideas.json')" class="btn btnprimary">Send Idea
+		</button>
 	</div>
 
 	<div id="testform" class="container jumbotron">
-		<button onclick="requestIdea('GET')" class="btn btnprimary">Get Idea</button>
+		<button onclick="requestIdea('GET', null, './private/ideas.json')" class="btn btnprimary">Get Idea</button>
 
 	</div>
 
 
 
-<!-------------end test---->
+<!-- end test -->
 	<div class="container jumbotron">
 		<h1>Make Dallas Better!</h1>
 

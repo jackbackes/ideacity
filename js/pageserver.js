@@ -43,7 +43,7 @@ var postToJSON = function(url, JSONToAppend) {
 	var ideaCity = fs.readFileSync(url).toString();
 	console.log('require successful \nparsing ideaCity to ideaCityParsed');
 	var ideaCityParsed = JSON.parse(ideaCity);
-	ideaCityParsed.ideas[ideaCityParsed.ideas.length] = JSONToAppend;
+	ideaCityParsed.ideas[ideaCityParsed.ideas.length] = JSON.parse(JSONToAppend);
 	console.log('parsing successful\nre-stringification test');
 	console.log(JSON.stringify(ideaCityParsed, null, "\t"));
 	fs.writeFile(url, JSON.stringify(ideaCityParsed, null, "\t"), function(err) {

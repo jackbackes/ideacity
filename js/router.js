@@ -1,12 +1,13 @@
 //Router is initialized in js.js
 var path = require('path');
 
+
 //Router configuration
-var isTest = 'n';
+var isTest = 'y';
 
 //Routes the request, so that a proper file can be found for it!
 var route = function(pathname) {
-	console.log('router initialized');
+	console.log('\n\nrouter initialized');
 	var path = process.cwd() + '\/'; //Sets up the path to the
 	// current directory, the one
 	// that will contain the pages.

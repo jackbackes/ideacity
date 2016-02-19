@@ -1,0 +1,32 @@
+{
+	"ideas": [
+		{
+			"idea": "lorem ipsum lorem ipsum",
+			"ideaDescription": "lorem ipsum lorem ipsum",
+			"ideaTags": [
+				{
+					"key": "tag 1"
+				},
+				{
+					"key": "tag 2"
+				}
+			],
+			"category": "educated",
+			"contributor": "userName"
+		},
+		{
+			"idea": "lorem ipsum lorem ipsum",
+			"ideaDescription": "lorem ipsum lorem ipsum",
+			"ideaTags": [
+				{
+					"key": "tag 1"
+				},
+				{
+					"key": "tag 2"
+				}
+			],
+			"category": "educated",
+			"contributor": "userName"
+		}
+	]
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+
+
+
+</head>
+
+
+<body>
+	<h1>Hello World!</h1>
+	<h2>This is my form!</h2>
+	<form id="myform">
+		Name: <input type="text" name="name" id="txt_name" onKeyPress="nameKeyPress()" onKeyUp="nameKeyPress()" />
+		<!--<input type="submit" value="Submit" />-->
+	</form>
+
+	<button onclick="submitForm();">Submit</button>
+
+	<span id="lblValue">My name is: </span>
+
+	 <script type="text/JavaScript">
+        console.log('begin');
+        var http = new XMLHttpRequest();
+        var name = document.getElementById("txt_name");
+        var name_value = name.value;
+        //on key press update value
+       	var frm = {
+       		'name':''
+       	};
+       	var body = "";
+        function nameKeyPress(){
+        	var nameValue = document.getElementById("txt_name");
+        	frm.name = nameValue.value;
+        	var lblValue = document.getElementById("lblValue");
+        	lblValue.innerText = "My name is: " + nameValue.value;
+        	body = JSON.stringify(frm);
+        };
+
+
+        //Post Request:
+        function submitForm()
+        {
+	        http.open("POST", "http://127.0.0.1:3000", true);
+	        http.setRequestHeader("Content-type", "application/json");
+	        //http.setRequestHeader("Content-length", params.length);
+	        //http.setRequestHeader("Connection", "close");
+
+	        http.onreadystatechange = function() {
+	            console.log('onreadystatechange');
+	            if (http.readyState == 4 && http.status == 200) {
+	                alert(http.responseText);
+	            }
+	            else {
+	                console.log('readyState=' + http.readyState + ', status: ' + http.status);
+	            }
+	        }
+
+	        console.log('sending...')
+	        http.send(body);
+	        console.log('end');
+	        name.value = "";
+	        return false;
+        }
+
+
+    </script>
+
+
+
+
+</body>

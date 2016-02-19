@@ -4,14 +4,16 @@ console.log('getting required modules');
 var http = require('http');
 var url = require('url');
 var util = require('util');
+var querystring = require('querystring');
 var prompt = require('prompt');
 
 console.log('running configuration tests');
 //Configuration tests
 //Set Server Configuration
 	var appConfig = {
-		isTest: 'n',
-		isLive: 'n'
+		isTest: 'y',
+		isLive: 'n',
+		verbose: true
 	};
 
 	prompt.start();
@@ -60,10 +62,7 @@ var Start = function(route, serve, reqtype, postToJSON) {
 		} catch(err) {
 
 		}
-
-		// Responds to all requests apart from that for favicon.ico
 		if (pathname !== 'favicon.ico') {
-			console.log('Request has been received');
 
 			// Get the path from the router
 			var path = route(pathname);
@@ -78,6 +77,12 @@ var Start = function(route, serve, reqtype, postToJSON) {
 			var type = reqtype(path);
 			console.log('Filetype has been found: ' + type);
 
+		}
+		// Responds to all requests apart from that for favicon.ico
+		if (pathname !== 'favicon.ico' && req.method !== 'POST') {
+			console.log('Request has been received');
+
+
 			//Writes what type of data will be sent. Dynamically sets the file ending.
 			res.writeHead(200, {
 				'Content-Type' : 'text/' + type
@@ -88,14 +93,35 @@ var Start = function(route, serve, reqtype, postToJSON) {
 			res.write(html);
 			console.log('Completed writing to output');
 			//end connection:
-			res. end();
+			res.end();
 			console.log("Request answered and connection ended.")
 		}
 
 		// Writing JSON
-		    console.log('Request received on server.js 122: ');
+		if(req.method == 'POST'){
 
-		    var JSONToAdd = {
+			console.log('Method verified as POST. Initializing WRITING JSON Module.');
+			if(appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
+		    //read form data as string
+		    var formData = '';
+
+		    if(appConfig.verbose) console.log('start formData = ' + formData);
+			if(appConfig.verbose) console.log('trying to read incoming data');
+	    	
+	    	req.on('data', function(data) {
+		    	formData += data.toString();
+		    });
+
+			//end request
+		    req.on('end', function() {
+		      // empty 200 OK response for now
+		      	if(appConfig.verbose && formData === '') console.log('read failed. no data or event did not fire.')
+		    	if(appConfig.verbose && formData !== '') console.log('Completed reading data. formData = \n' + formData);
+		    	postToJSON(path, formData);
+
+		    });
+
+		    var JSONToAdd = {/*
 				"idea": "lorem ipsum lorem ipsum",
 				"ideaDescription": "lorem ipsum lorem ipsum",
 				"ideaTags": [
@@ -107,11 +133,11 @@ var Start = function(route, serve, reqtype, postToJSON) {
 					}
 				],
 				"category": "educated",
-				"contributor": "userName"
+				"contributor": "userName"*/
 		    }
 		    try{
 		    	console.log('trying to post to JSON at ' + path);
-		    	postToJSON(path, JSONToAdd);
+		    	//postToJSON(path, formData);
 		    	console.log('completed post to JSON');
 		    } catch(err) {
 		    	console.log("didn't work");
@@ -119,13 +145,11 @@ var Start = function(route, serve, reqtype, postToJSON) {
 		    } finally {
 		    	console.log('Completed attempt to post to JSON');
 		    }
-		    res.writeHead(200, { 'Content-Type': 'text/plain' });
-		    req.on('data', function (chunk) {
-		        console.log('GOT DATA!');
-		    });
-		    res.end('callback(\'{\"msg\": \"OK\"}\')');
-		    console.log('Completed response on server.js');
-
+		} else {
+			console.log('[405] ' + req.method + ' to ' + req.url);
+			res.writeHead(405, "Method not supported", {'Content-Type': 'text/html'});
+			res.end('<html><head><title>405 - Method not supported</title></head><body><h1>Method not supported.</h1></body></html>');
+		}
 	};
 	http.createServer(onRequest).listen(ideaPort, ideaServer);
 	console.log('Ideacity up and running at http://' + ideaServer + ':' + ideaPort + '/ from server.js');
