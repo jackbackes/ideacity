@@ -1,14 +1,65 @@
 //the Node server backend for Ideacity
 
 console.log('getting required modules');
+console.log('initializing express from server.js');
+var express = require('express'); console.log('express initialized from server.js');
+var app = express();
+var mongoose = require('mongoose');
+var configAuth = require('../config/auth.js');
+console.log(configAuth.facebookAuth.clientID);
+var passport = require('passport');
+var flash = require('connect-flash');
+var configDB = require('../config/database.js');
+var morgan = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
 var http = require('http');
 var url = require('url');
 var util = require('util');
 var querystring = require('querystring');
 var prompt = require('prompt');
 
+
 console.log('running configuration tests');
-//Configuration tests
+//Configuration tests==============================================
+
+//Set Database Configuration
+mongoose.connect(configDB.url); //connect to our database
+
+require('../config/passport')(passport); //pass passport for configuration
+
+//Configure Express
+app.use(morgan('dev')); //log every request to the console
+app.use(cookieParser()); //read Cookies (needed for auth)
+app.use(bodyParser()); //get information from html forms
+var options = {
+  dotfiles: 'ignore',
+  etag: false,
+  extensions: ['htm', 'html'],
+  index: false,
+  maxAge: '1d',
+  redirect: false,
+  setHeaders: function (res, path, stat) {
+    res.set('x-timestamp', Date.now());
+  }
+}
+app.use(express.static('public', options));
+
+app.set('view engine', 'ejs'); //set up ejs for templating
+
+// configure passport
+try{
+	console.log('configuring passport');
+	app.use(session({ secret: 'ilovescotchscotchyscotchscotch'})); // session secret
+	app.use(passport.initialize());
+	app.use(passport.session()); // persistent login sessions
+	app.use(flash()); // use connect-flash for flash messages stored in session
+} catch(err){console.log('passport error: ' + err)};
+
+// routes ============
+var routes = require('../app/routes.js')(app, passport, express);
+
 //Set Server Configuration
 	var appConfig = {
 		isTest: 'y',
@@ -35,17 +86,15 @@ if(appConfig.isLive === 'y') {
 	var ideaServer = 'ideacity.thisismotive.com'
 
 } else {
-	var ideaServer = '127.0.0.1';
+	var ideaServer = 'localhost';
 };
 	console.log('server set to ' + ideaServer);
 
-var ideaPort = 1337;
+var ideaPort = process.env.PORT || 1337;
 	console.log('port set to ' + ideaPort);
 
 // Get required Modules
-console.log('initializing express from server.js');
-var express = require('express'); console.log('express initialized from server.js');
-var app = express();
+
 
 //start the service
 var Start = function(route, serve, reqtype, postToJSON) {
@@ -98,7 +147,7 @@ var Start = function(route, serve, reqtype, postToJSON) {
 		}
 
 		// Writing JSON
-		if(req.method == 'POST'){
+		if(req.method == 'POST' && pathname != '/login'){
 
 			console.log('Method verified as POST. Initializing WRITING JSON Module.');
 			if(appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
@@ -151,12 +200,15 @@ var Start = function(route, serve, reqtype, postToJSON) {
 			res.end('<html><head><title>405 - Method not supported</title></head><body><h1>Method not supported.</h1></body></html>');
 		}
 	};
-	http.createServer(onRequest).listen(ideaPort, ideaServer);
+	//http.createServer(onRequest).listen(ideaPort, ideaServer);
+	app.listen(ideaPort, ideaServer);
 	console.log('Ideacity up and running at http://' + ideaServer + ':' + ideaPort + '/ from server.js');
 };
  
  console.log('exporting Start');
  exports.Start = Start;
+ exports.app = app;
+ exports.passport = passport;
 
  console.log('Start exported');
 

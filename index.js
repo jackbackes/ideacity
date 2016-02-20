@@ -1,4 +1,4 @@
-console.log("Initializing server");
+console.log("\nInitializing server");
 
 
 

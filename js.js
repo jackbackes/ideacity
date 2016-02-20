@@ -14,7 +14,10 @@ $(document).ready(function() {
 			cityOfIdeas = data.ideas;
 			console.log('printing JSON:');
 			console.log(cityOfIdeas);
+			console.log(cityOfIdeas.length);
+			populateIdeas(cityOfIdeas);
 		});
+
 
 	//submitting an idea
 		var myForm = {};
@@ -27,14 +30,24 @@ $(document).ready(function() {
 
 //defining functions
 
+	//get all the ideas
+	var populateIdeas = function(data) {
+		var entries = data.length;
+		for(var i = 0; i<entries; i++){
+			thisIdea = data[i];
+			postIdea(thisIdea.idea,thisIdea.ideaDescription,thisIdea.category, thisIdea.contributor);
+		};
+		console.log('done writing ideas');
+	};
+
 	//templates
 
 	//adds post it to home page
-	var postIdea = function(idea, ideaDescription, category) {
+	var postIdea = function(idea, ideaDescription, category, contributor) {
 		$('ul#' + category).prepend(
 			`<li class='postIt container jumbotron'>
 				<h3>${idea}</h3>
-				<p>${ideaDescription}</p>
+				<div class="postItDescription"><p>${ideaDescription}</p></div>
 				<span>idea tag 1</span>
 				<span>Upvote</span> <span>Downvote</span> <span># of votes</span>
 				<div class="defaultAvatar img-circle" style=""></div>
@@ -42,6 +55,13 @@ $(document).ready(function() {
 				</li>`
 			);
 	};
+
+	var postIts = function(category, color) {
+		`<ul class="postIts jumbotron ${color}" id="${category}">
+		</ul>`
+	}
+
+	//calculate width of category box
 
 	//sending idea to server
 	var myJSON = function(id) {
@@ -51,7 +71,8 @@ $(document).ready(function() {
 			var formJSON = {
 				"idea": $("#input-idea-input").val(),
 				"ideaDescription": $("#input-idea-description").val(),
-				"category": $("#input-idea-category").val().toLowerCase()
+				"category": $("#input-idea-category").val().toLowerCase(),
+				"contributor": "userName".toLowerCase()
 			}
 			return JSON.stringify(formJSON);
 		}

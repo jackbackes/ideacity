@@ -17,14 +17,34 @@
 
 <script type="text/javascript" src="./js/facebook.js"></script>
 
+<div class="container top-container">
+
+<!--Indicate Test -->
+<!--	<div class="container jumbotron">
+		<h1>THIS IS A TEST PAGE</h1>
+	</div>
+-->
 <!--testing facebook like button-->
 
+<!--------------begin test -->
+<!--	<div id="testform" class="container jumbotron">
+		<form class="form-horizontal">
+			<input type="text" id="testforminput" name="testdata"></input>
+			<input type="submit" id="testformsubmit"></input>
+		</form>
+	</div>
 
-<script>
-	console.log('loading html...');
+	<div id="testform" class="container jumbotron">
+		<button onclick="requestIdea('POST', myJSON, './private/ideas.json')" class="btn btnprimary">Send Idea
+		</button>
+	</div>
 
-</script>
-<div class="container top-container">
+	<div id="testform" class="container jumbotron">
+		<button onclick="requestIdea('GET', null, './private/ideas.json')" class="btn btnprimary">Get Idea</button>
+
+	</div> -->
+
+<!-- end test -->
 
 
 	<div class="container jumbotron">
@@ -47,9 +67,9 @@
 			</div>
 		</div>
 	</div>
-	<div id="add-my-idea" class="col-md-9 collapse container jumbotron">
+	<div id="add-my-idea" class="col-md-12 collapse container jumbotron">
 		<p>Add your ideas on how Dallas can be a better place!</p>
-		<form class="form-horizontal">
+		<form class="form-horizontal" id="ideaForm">
 			<div class="form-group inputShadow" id="idea-title">
 				<label for="input-idea-title">Idea</label>
 				<input type ="text" class="form-control inputShadow" id="input-idea-input" placeholder="Dallas should..."></input>
@@ -72,39 +92,19 @@
 					<option>Physical</option>
 				</select>
 			</div>
-			<button type="button" class="btn btn-primary" id="submitIdea" onclick="">Submit My Idea</button>
-
 		</form>
+		<button type="button" class="btn btn-primary" id="sendIdea" >Submit My Idea</button>
 	</div>
-
-
+	<br>
+	<div class="container">
 		<h1>Educated City Ideas</h1>
 		<ul class="postIts jumbotron canaryYellow" id="educated">
 			<li class="postIt container jumbotron">
 				<h3>This is my idea</h3>
-				<p>Idea Description</p>
+				<div class="postItDescription"><p>Idea Description</p></div>
 				<span>idea tag 1</span> <span>idea tag 2</span>
 				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
 				<div class="defaultAvatar1 img-circle" style=""></div>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-				<div class="defaultAvatar img-circle" style=""></div>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
 			</li>
 			<!--<div class="postItShadow"></div>-->
 		</ul>
@@ -229,26 +229,17 @@
 			</li>
 			<!--<div class="postItShadow"></div>-->
 		</ul>
-
+	</div>
 
 </div>
 
-<script>
-	console.log('html loaded on index.html');
-	console.log('loading scripts from index.html');
-
-</script>
 
 	<script src="./js/jquery.js"></script>
 	<script src="./js/npm.js"></script>
 	<script src="./js/bootstrap.js"></script>
 	<script src="./js/material.js"></script>
+	<script src="./js/jserialize.js"></script>
 	<script src="js.js"></script>
-
-<script>
-	console.log('scripts loaded from index.html');
-</script>
-
 </body>
 
 </html>
