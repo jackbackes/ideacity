@@ -50,7 +50,11 @@
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
         <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a> -->
         <p>To Add Your Idea,</p>
-        <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span>Login With Facebook</a>
+        <!--<a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span>Login With Facebook</a>-->
+		<div class="form-group " id="connect-with-facebook">
+			<label for="facebook-link">Connect with Facebook</label><br>
+			<div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true"></div>
+		</div>
     </div>
 
 	<div class="container jumbotron text-center">
@@ -73,10 +77,6 @@
 				<label for="input-idea-description-title">Description</label>
 				<textarea class="form-control inputShadow" id="input-idea-description" placeholder="More info..." rows="4"></textarea>
 			</div>
-			<!--<div class="form-group inputShadow" id="connect-with-facebook">
-				<label for="facebook-link">Connect with Facebook</label><br>
-				<div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true"></div>
-			</div>-->
 			<div class="form-group inputShadow" id="idea-tag">
 				<label for="input-idea-tag">Associate your Idea with a City</label>
 				<select class="form-control" id="input-idea-category">
