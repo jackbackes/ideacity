@@ -49,11 +49,10 @@ $(document).ready(function() {
 				<h3>${idea}</h3>
 				<div class="postItDescription"><p>${ideaDescription}</p></div>
 				<span>${contributor}</span>
-				`/*<span>idea tag 1</span>
+				</li>`/*<span>idea tag 1</span>
 				<span>Upvote</span> <span>Downvote</span> <span># of votes</span>
 				<div class="defaultAvatar img-circle" style=""></div>
-				<div style="display:none;">name</div>*/ +
-				`</li>`
+				<div style="display:none;">name</div>*/
 			);
 	};
 
