@@ -23,6 +23,14 @@ module.exports = function(app, passport, express) {
     });
 
     // =====================================
+    // CARDS                        ========
+    // =====================================
+
+    app.get('/cards', function(req, res) {
+        res.render('cards.ejs'); // load the cards.ejs file
+    });
+
+    // =====================================
     // LOGIN ===============================
     // =====================================
     // show the login form
