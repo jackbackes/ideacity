@@ -63,7 +63,7 @@ var routes = require('../app/routes.js')(app, passport, express);
 //Set Server Configuration
 	var appConfig = {
 		isTest: 'y',
-		isLive: 'y',
+		isLive: 'n',
 		verbose: true
 	};
 
