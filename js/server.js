@@ -86,7 +86,7 @@ if(appConfig.isLive === 'y') {
 	var ideaServer = 'ideacity.thisismotive.com'
 
 } else {
-	var ideaServer = 'ideacity.thisismotive.com';
+	var ideaServer = 'localhost';
 };
 	console.log('server set to ' + ideaServer);
 
