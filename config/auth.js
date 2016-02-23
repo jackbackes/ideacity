@@ -13,10 +13,6 @@ module.exports = {
         'testCallbackURL' : 'http://ideacityTest.herokuapp.com/auth/facebook/callback'
     },
 
-    'facebookAuthLocal' : {
-
-    }
-
     'twitterAuth' : {
         'consumerKey'       : 'your-consumer-key-here',
         'consumerSecret'    : 'your-client-secret-here',
