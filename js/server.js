@@ -4,7 +4,7 @@ console.log('getting required modules');
 console.log('initializing express from server.js');
 var express = require('express'); console.log('express initialized from server.js');
 var app = express();
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var configAuth = require('../config/auth.js');
 console.log(configAuth.facebookAuth.clientID);
 var passport = require('passport');
@@ -25,7 +25,7 @@ console.log('running configuration tests');
 //Configuration tests==============================================
 
 //Set Database Configuration
-//mongoose.connect(configDB.url); //connect to our database
+mongoose.connect(configDB.url); //connect to our database
 
 require('../config/passport')(passport); //pass passport for configuration
 
