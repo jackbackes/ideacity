@@ -21,7 +21,7 @@ module.exports = function(app, passport, express) {
     app.get('/', function(req, res) {
         //var loginCheck = isUserLoggedIn();
         res.render('index.ejs', {
-            loginCheck: loginCheck
+        //    loginCheck: loginCheck
         }); // load the index.ejs file
     });
 
