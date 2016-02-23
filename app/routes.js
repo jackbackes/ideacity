@@ -87,6 +87,7 @@ module.exports = function(app, passport, express) {
     // route for facebook authentication and login
     app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
+
     // handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
@@ -102,19 +103,27 @@ module.exports = function(app, passport, express) {
         res.redirect('/');
     });
 
+
+
 // =============================================================================
 // AUTHORIZE (ALREADY LOGGED IN / CONNECTING OTHER SOCIAL ACCOUNT) =============
 // =============================================================================
 
     // locally --------------------------------
         app.get('/connect/local', function(req, res) {
-            res.render('connect-local.ejs', { message: req.flash('loginMessage') });
+            res.render('connect-local.ejs', { 
+                message: req.flash('loginMessage') 
+            });
         });
+
+
         app.post('/connect/local', passport.authenticate('local-signup', {
             successRedirect : '/profile', // redirect to the secure profile section
             failureRedirect : '/connect/local', // redirect back to the signup page if there is an error
             failureFlash : true // allow flash messages
         }));
+
+
 
     // facebook -------------------------------
 
@@ -154,10 +163,6 @@ module.exports = function(app, passport, express) {
         });
     });
 
-
-
-};
-
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
@@ -167,4 +172,9 @@ function isLoggedIn(req, res, next) {
 
     // if they aren't redirect them to the home page
     res.redirect('/');
-}
+};
+
+};
+
+
+

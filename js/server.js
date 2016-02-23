@@ -64,7 +64,7 @@ var routes = require('../app/routes.js')(app, passport, express);
 //Set Server Configuration
 	var appConfig = {
 		isTest: 'y',
-		isLive: 'n',
+		isLive: 'heroku',
 		verbose: true
 	};
 
@@ -82,10 +82,10 @@ var routes = require('../app/routes.js')(app, passport, express);
 
 //Configure host
 
-
-if(appConfig.isLive === 'y') {
-	var ideaServer = 'ideacity.thisismotive.com'
-
+if(appConfig.isLive === 'heroku') {
+	var ideaServer = 'ideacity.herokuapp.com';
+} else if(appConfig.isLive === 'y') {
+	var ideaServer = 'ideacity.thisismotive.com';
 } else {
 	var ideaServer = 'localhost';
 };
