@@ -19,6 +19,10 @@ module.exports = function(app, passport, express) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', function(req, res) {
+        var isUserLoggedIn = function() {
+            if(req.isAuthenticated()) {
+                return 1;
+            } else { return 0};};
         res.render('index.ejs'); // load the index.ejs file
     });
 
