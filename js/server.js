@@ -202,7 +202,7 @@ var Start = function(route, serve, reqtype, postToJSON) {
 		}
 	};
 	//http.createServer(onRequest).listen(ideaPort, ideaServer);
-	app.listen(process.env.PORT || ideaPort, ideaServer);
+	app.listen(process.env.PORT || ideaPort, process.env.YOUR_HOST || ideaServer);
 	console.log('Ideacity up and running at http://' + ideaServer + ':' + ideaPort + '/ from server.js');
 };
  
