@@ -19,10 +19,6 @@ module.exports = function(app, passport, express) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', function(req, res) {
-        var isUserLoggedIn = function() {
-            if(req.isAuthenticated()) {
-                return 1;
-            } else { return 0};};
         
         res.render('index.ejs', {
             isUserLoggedIn: isUserLoggedIn()
@@ -183,6 +179,13 @@ function isLoggedIn(req, res, next) {
     // if they aren't redirect them to the home page
     res.redirect('/');
 };
+
+//General "is user logged in" call:
+
+    var isUserLoggedIn = function(req, res) {
+        if(req.user) {
+            return 1;
+        } else { return 0};};
 
 };
 
