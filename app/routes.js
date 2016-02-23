@@ -21,7 +21,7 @@ module.exports = function(app, passport, express) {
     app.get('/', function(req, res) {
         //var loginCheck = isUserLoggedIn();
         res.render('index.ejs', {
-        //    loginCheck: loginCheck
+            user : req.user // get the user out of session and pass to template
         }); // load the index.ejs file
     });
 
@@ -180,15 +180,7 @@ function isLoggedIn(req, res, next) {
     res.redirect('/');
 };
 
-//General "is user logged in" call:
 
-    var isUserLoggedIn = function(req, res) {
-        if(req.user) {
-            return true;
-        } else { return false};
-    };
-
-};
 
 
 
