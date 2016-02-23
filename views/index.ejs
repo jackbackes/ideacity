@@ -49,24 +49,22 @@
         <!--
         <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
         <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a> -->
-        <p>To Add Your Idea,</p>
 
 
-
-    <!-- IF USER IS LOGGED IN -->
-        <% if(user) {%> <p> Welcome <%= user.facebook.name %> ! </p> <a href="/logout" class="btn btn-primary">Logout</a>
+    <!-- IF USER IS LOGGED IN - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <% if(user) {%> <p> Welcome <a href="/profile"><%= user.facebook.name %></a> ! </p> <a href="/logout" class="btn btn-primary">Logout</a>
 
 
 		<div class="container jumbotron text-center">
 			<div class="col-md-3">
-				<button class="btn btn-primary" data-toggle="collapse" data-target="#add-my-idea">Add Your Idea!</button>
+				<button class="btn btn-primary" data-toggle="collapse" data-target="#add-my-idea">Add Your Idea to IdeaCity!</button>
 			</div>
 		</div>
 	</div>
 
 
 
-    <!-- IF USER IS NOT LOGGED IN! -->
+    <!-- IF USER IS NOT LOGGED IN! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <% } else { %>         
         <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span>Login With Facebook to add your idea!</a>
 
