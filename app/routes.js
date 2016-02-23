@@ -23,6 +23,7 @@ module.exports = function(app, passport, express) {
             if(req.isAuthenticated()) {
                 return 1;
             } else { return 0};};
+        isUserLoggedIn();
         res.render('index.ejs'); // load the index.ejs file
     });
 
