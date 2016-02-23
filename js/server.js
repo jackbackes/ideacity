@@ -83,7 +83,7 @@ var routes = require('../app/routes.js')(app, passport, express);
 //Configure host
 
 if(appConfig.isLive === 'heroku') {
-	var ideaServer = 'auto';
+	app.set('port', (process.env.PORT || 5000));
 } else if(appConfig.isLive === 'y') {
 	var ideaServer = 'ideacity.thisismotive.com';
 } else {
@@ -202,7 +202,13 @@ var Start = function(route, serve, reqtype, postToJSON) {
 		}
 	};
 	//http.createServer(onRequest).listen(ideaPort, ideaServer);
-	app.listen(process.env.PORT || ideaPort, process.env.YOUR_HOST || ideaServer);
+	if(appConfig.isLive === 'heroku') {
+		app.listen(app.get('port'), function() {
+  			console.log('Node app is running on port', app.get('port'));
+			});
+	} else {
+		app.listen(process.env.PORT || ideaPort, process.env.YOUR_HOST || ideaServer);
+	}
 	console.log('Ideacity up and running at http://' + ideaServer + ':' + ideaPort + '/ from server.js');
 };
  
