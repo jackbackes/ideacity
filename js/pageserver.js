@@ -2,7 +2,7 @@
 console.log('loading pageserver');
 var path = require('path');
 var fs = require('fs');
-
+console.log('requirements complete');
 // Serves the page by returning the html.
 var serve = function(path) {
 
@@ -51,7 +51,7 @@ var postToJSON = function(url, JSONToAppend) {
 		console.log('The JSON was appended successfully to ' + url);
 	});
 };
-
+console.log('starting exports');
 exports.serve = serve;
 exports.reqtype = reqtype;
 exports.postToJSON = postToJSON;
