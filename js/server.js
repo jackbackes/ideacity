@@ -25,6 +25,7 @@ console.log('running configuration tests');
 //Configuration tests==============================================
 
 //Set Database Configuration
+console.log(configDB.url);
 mongoose.connect(configDB.url); //connect to our database
 
 require('../config/passport')(passport); //pass passport for configuration
