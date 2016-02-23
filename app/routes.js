@@ -6,7 +6,14 @@ module.exports = function(app, passport, express) {
     var path = require('path');
     var isTest = 'y';
 
+    // =====================================
+    // RECEIVE POST  =======================
+    // =====================================
 
+    app.post('/', function(req, res){
+        console.log(req.body);      // your JSON
+        res.send(req.body);    // echo the result back
+    });
 
     // =====================================
     // LOAD CSS and scripts
