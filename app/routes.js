@@ -19,9 +19,9 @@ module.exports = function(app, passport, express) {
     // HOME PAGE (with login links) ========
     // =====================================
     app.get('/', function(req, res) {
-        
+        var loginCheck = isUserLoggedIn();
         res.render('index.ejs', {
-            isUserLoggedIn: isUserLoggedIn()
+            loginCheck: loginCheck
         }); // load the index.ejs file
     });
 
@@ -184,8 +184,9 @@ function isLoggedIn(req, res, next) {
 
     var isUserLoggedIn = function(req, res) {
         if(req.user) {
-            return 1;
-        } else { return 0};};
+            return true;
+        } else { return false};
+    };
 
 };
 
