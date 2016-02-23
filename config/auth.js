@@ -8,8 +8,14 @@ module.exports = {
     'facebookAuth' : {
         'clientID'      : '249810685350711', // your App ID
         'clientSecret'  : '563a7044844acdf0ac19cad67929bc45', // your App Secret
-        'callbackURL'   : 'http://ideacity.herokuapp.com/auth/facebook/callback'
+        'callbackURL'   : 'http://ideacity.herokuapp.com/auth/facebook/callback',
+        'localCallbackURL' : 'http://localhost:5000/auth/facebook/callback',
+        'testCallbackURL' : 'http://ideacityTest.herokuapp.com/auth/facebook/callback'
     },
+
+    'facebookAuthLocal' : {
+
+    }
 
     'twitterAuth' : {
         'consumerKey'       : 'your-consumer-key-here',

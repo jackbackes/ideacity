@@ -84,11 +84,18 @@ var routes = require('../app/routes.js')(app, passport, express);
 
 if(appConfig.isLive === 'heroku') {
 	app.set('port', (process.env.PORT || 5000));
+	var ideaServer = 'ideacity.herokuapp.com';
+	app.locals.facebookAuth = configAuth.facebookAuth.callbackURL;
 } else if(appConfig.isLive === 'y') {
 	var ideaServer = 'ideacity.thisismotive.com';
+	app.locals.facebookAuth = configAuth.facebookAuth.callbackURL;
 } else {
 	var ideaServer = 'localhost';
+	app.locals.facebookAuth = configAuth.facebookAuth.localcallbackURL;
 };
+
+app.locals.ideaServer = ideaServer;
+
 	console.log('server set to ' + ideaServer);
 
 var ideaPort = process.env.PORT || 1337;
