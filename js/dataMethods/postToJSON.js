@@ -6,10 +6,13 @@ var path = require('path');
 var fs = require('fs');
 
 var postToJSON = function(url, JSONToAppend) {
-	console.log('attempting to post - from server.js');
+	console.log('attempting to post to ' + url + ' - from server.js');
 	console.log('Current working directory (post to JSON): ' + process.cwd());
 	console.log('requiring ideaCity');
-	var ideaCity = fs.readFileSync(url).toString();
+	var ideaCity = fs.readFileSync(url, function(err) {
+						if (err) throw err;
+						console.log('The JSON was appended successfully to ' + url);
+					}).toString();
 	console.log('require successful \nparsing ideaCity to ideaCityParsed');
 	var ideaCityParsed = JSON.parse(ideaCity);
 	ideaCityParsed.ideas[ideaCityParsed.ideas.length] = JSON.parse(JSONToAppend);
