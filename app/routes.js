@@ -21,7 +21,7 @@ module.exports = function(app, passport, express) {
     app.post('/acceptIdeas', function(req, res){
         try{
             var fs = require('fs');
-            var jsonObj = require('/public/private/ideas.JSON');
+            var jsonObj = require('../public/private/ideas.JSON');
             jsonObj[jsonObj.length] = req.body;
             var newJSONObj = JSON.stringify(jsonObj);
             fs.writeFileSync('/public/private/ideas.JSON',newJSONObj);
