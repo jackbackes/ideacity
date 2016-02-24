@@ -68,7 +68,7 @@ var routes = require('../app/routes.js')(app, passport, express);
 		verbose: true
 	};
 
-	var app.locals.appConfig = {
+	app.locals.appConfig = {
 		isTest: 'y',
 		isLive: 'heroku',
 		verbose: true
