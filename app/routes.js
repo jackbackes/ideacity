@@ -20,6 +20,7 @@ module.exports = function(app, passport, express) {
         var formData = JSON.stringify(req.body);
         console.log(formData);
         try{
+            console.log('Current working directory (app.post): ' + process.cwd());
             postToJSON.postToJSON('../private/ideas.JSON', formData);
             res.end('success');
         } catch(err) {
