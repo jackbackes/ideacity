@@ -11,6 +11,7 @@ module.exports = function(app, passport, express) {
     // =====================================
 
     app.post('/acceptIdeas', function(req, res){
+        var fs = require('fs');
         if(app.locals.verbose) console.log('requiring postToJSON');
         //var postToJSON = require('../js/dataMethods/postToJSON.js');
         console.log(req.body);      // your JSON
