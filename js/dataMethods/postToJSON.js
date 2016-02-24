@@ -9,7 +9,7 @@ var postToJSON = function(url, JSONToAppend) {
 	console.log('attempting to post to ' + url + ' - from server.js');
 	console.log('Current working directory (post to JSON): ' + process.cwd());
 	console.log('requiring ideaCity');
-	var ideaCity = fs.readFileSync(url, function(err) {
+	var ideaCity = fs.readFile(url, function(err) {
 						if (err) throw err;
 						console.log('able to read');
 					}).toString();
