@@ -11,7 +11,7 @@ var postToJSON = function(url, JSONToAppend) {
 	console.log('requiring ideaCity');
 	var ideaCity = fs.readFileSync(url, function(err) {
 						if (err) throw err;
-						console.log('The JSON was appended successfully to ' + url);
+						console.log('able to read');
 					}).toString();
 	console.log('require successful \nparsing ideaCity to ideaCityParsed');
 	var ideaCityParsed = JSON.parse(ideaCity);
