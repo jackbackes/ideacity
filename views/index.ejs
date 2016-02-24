@@ -19,17 +19,9 @@
 
 <div class="container top-container">
 
-<!--Indicate Test -->
+
 <div class="container jumbotron">
 
-
-<!--testing facebook like button-->
-
-
-<!--------------begin test -->
-
-
-<!-- end test -->
 
 
 	<div class="container jumbotron">
@@ -46,14 +38,7 @@
     <div class="jumbotron text-center">
        
 
-        <!--
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a> -->
-		<div class="container jumbotron text-center">
-			<div class="col-md-3">
-				<button class="btn btn-primary" data-toggle="collapse" data-target="#add-my-idea">Add Your Idea to IdeaCity!</button>
-			</div>
-		</div>
+
 
     <!-- IF USER IS LOGGED IN - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <% if(user) {%> <p> Welcome <a href="/profile"><%= user.facebook.name %></a> ! </p> <a href="/logout" class="btn btn-primary">Logout</a>
@@ -68,21 +53,15 @@
 
 
 
-    <!-- IF USER IS NOT LOGGED IN! - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    <!-- IF USER IS NOT LOGGED IN  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <% } else { %>         
         <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span>Login With Facebook to add your idea!</a>
 
     </div>
 
         <% } %>
-		<!--<div class="form-group " id="connect-with-facebook">
-			<label for="facebook-link">Connect with Facebook</label><br>
-			<div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="true" data-auto-logout-link="true"></div>
-		</div>-->
 
-
-
-
+    <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
 	<div id="add-my-idea" class="col-md-12 collapse container jumbotron text-center">
 		<p>Add your ideas on how Dallas can be a better place!</p>

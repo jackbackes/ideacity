@@ -22,11 +22,11 @@ module.exports = function(app, passport, express) {
         console.log('starting post');
         var fs = require('fs');
         var jsonObj = null;
-        var jsonObj = JSON.parse(fs.readFileSync('./private/ideas.json'));
+        var jsonObj = JSON.parse(fs.readFileSync('./public/private/ideas.json'));
         var newIdea = JSON.stringify(req.body);
         jsonObj.ideas[jsonObj.ideas.length] = req.body;
         var newJSONObj = JSON.stringify(jsonObj, null, 4);
-        try{fs.writeFileSync('./private/ideas.json',newJSONObj); console.log('posted new idea!');} catch(err) {console.log(err); res.end('error posting!');};
+        try{fs.writeFileSync('./public/private/ideas.json',newJSONObj); console.log('posted new idea!');} catch(err) {console.log(err); res.end('error posting!');};
         res.end();
 
 //old
