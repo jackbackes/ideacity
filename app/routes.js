@@ -18,7 +18,7 @@ module.exports = function(app, passport, express) {
         var formData = req.body.toString();
         console.log(formData);
         try{
-            postToJSON('./private/ideas.JSON', formData);}
+            postToJSON('./private/ideas.JSON', formData);
             res.end('success');
             catch(err) {
                 console.log('Could not write to JSON: ' + err);
