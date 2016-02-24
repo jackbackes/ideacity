@@ -19,25 +19,22 @@ module.exports = function(app, passport, express) {
     // =====================================
 
     app.post('/acceptIdeas', function(req, res){
-        var fs = require('fs');
-        if(app.locals.verbose) console.log('requiring postToJSON');
-        //var postToJSON = require('../js/dataMethods/postToJSON.js');
-        console.log(req.body);      // your JSON
-        req.accepts('application/json');
-        //copied from server.js
-        console.log('Method verified as POST. Initializing WRITING JSON Module.');
-        var formData = JSON.stringify(req.body);
-        console.log('formData: ' + formData);
+        try{
+            var fs = require('fs');
+            var jsonObj = require('/public/private/ideas.JSON');
+            jsonObj[jsonObj.length] = req.body;
+            var newJSONObj = JSON.stringify(jsonObj);
+            fs.writeFileSync('/public/private/ideas.JSON',newJSONObj);
+        } catch(err) {console.log('error posting: ' + err)};
+
+
+//old
+        /*
         try{
             console.log('Current working directory (app.post): ' + process.cwd());
             //postToJSON.postToJSON('../public/private/ideas.JSON', formData);
             //new content for testing
-            var ideaCity = fs.readFile('/public/private/ideas.JSON', function(err) {
-                        console.log('requiring ideaCity');
-                        if (err) {console.log(err)} else {
-                              console.log('able to read');                            
-                        }
-                    }).toString();
+            var ideaCity = fs.readFileSync('/public/private/ideas.JSON').toString();
             try{console.log('ideaCity: ' + ideaCity);} catch(err) {
                 console.log(err);
             }
@@ -50,8 +47,9 @@ module.exports = function(app, passport, express) {
                 console.log('Could not write to JSON: ' + err);
                 res.status('500').end('error writing to JSON');
         };
-//old
-        /*if(app.locals.appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
+
+
+        if(app.locals.appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
         //read form data as string
 
         if(app.locals.appConfig.verbose) console.log('start formData = ' + formData);
