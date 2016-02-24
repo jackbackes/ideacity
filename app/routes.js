@@ -26,8 +26,9 @@ module.exports = function(app, passport, express) {
             //new content for testing
             var ideaCity = fs.readFile('/public/private/ideas.JSON', function(err) {
                         console.log('requiring ideaCity');
-                        if (err) throw err;
-                        console.log('able to read');
+                        if (err) {console.log(err)} else {
+                              console.log('able to read');                            
+                        }
                     }).toString();
             try{console.log(ideaCity);} catch(err) {
                 console.log(err);
