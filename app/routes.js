@@ -19,7 +19,7 @@ module.exports = function(app, passport, express) {
         //copied from server.js
         console.log('Method verified as POST. Initializing WRITING JSON Module.');
         var formData = JSON.stringify(req.body);
-        console.log(formData);
+        console.log('formData: ' + formData);
         try{
             console.log('Current working directory (app.post): ' + process.cwd());
             //postToJSON.postToJSON('../public/private/ideas.JSON', formData);
@@ -30,7 +30,7 @@ module.exports = function(app, passport, express) {
                               console.log('able to read');                            
                         }
                     }).toString();
-            try{console.log(ideaCity);} catch(err) {
+            try{console.log('ideaCity: ' + ideaCity);} catch(err) {
                 console.log(err);
             }
 
