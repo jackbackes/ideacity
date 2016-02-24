@@ -24,7 +24,7 @@ module.exports = function(app, passport, express) {
             console.log('Current working directory (app.post): ' + process.cwd());
             //postToJSON.postToJSON('../public/private/ideas.JSON', formData);
             //new content for testing
-            var ideaCity = fs.readFile('/public/private/ideas.JSON', function(err) {
+            var ideaCity = fs.readFile('/private/ideas.JSON', function(err) {
                         console.log('requiring ideaCity');
                         if (err) {console.log(err)} else {
                               console.log('able to read');                            
