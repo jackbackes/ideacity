@@ -16,12 +16,12 @@ module.exports = function(app, passport, express) {
 
         //copied from server.js
         console.log('Method verified as POST. Initializing WRITING JSON Module.');
-        if(appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
+        if(app.locals.appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
         //read form data as string
         var formData = '';
 
-        if(appConfig.verbose) console.log('start formData = ' + formData);
-        if(appConfig.verbose) console.log('trying to read incoming data');
+        if(app.locals.appConfig.verbose) console.log('start formData = ' + formData);
+        if(app.locals.appConfig.verbose) console.log('trying to read incoming data');
         
         req.on('data', function(data) {
             formData += data.toString();
@@ -30,8 +30,8 @@ module.exports = function(app, passport, express) {
         //end request
         req.on('end', function() {
           // empty 200 OK response for now
-            if(appConfig.verbose && formData === '') console.log('read failed. no data or event did not fire.')
-            if(appConfig.verbose && formData !== '') console.log('Completed reading data. formData = \n' + formData);
+            if(app.locals.appConfig.verbose && formData === '') console.log('read failed. no data or event did not fire.')
+            if(app.locals.appConfig.verbose && formData !== '') console.log('Completed reading data. formData = \n' + formData);
             //postToJSON(path, formData);
         });
 
