@@ -20,10 +20,10 @@ module.exports = function(app, passport, express) {
         try{
             postToJSON('./private/ideas.JSON', formData);
             res.end('success');
-            catch(err) {
+        } catch(err) {
                 console.log('Could not write to JSON: ' + err);
                 res.end('error writing to JSON');
-            }
+        };
 //old
         /*if(app.locals.appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
         //read form data as string
