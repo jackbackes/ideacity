@@ -7,6 +7,7 @@ var fs = require('fs');
 
 var postToJSON = function(url, JSONToAppend) {
 	console.log('attempting to post - from server.js');
+	console.log('Current working directory: ' + process.cwd());
 	console.log('requiring ideaCity');
 	var ideaCity = fs.readFileSync(url).toString();
 	console.log('require successful \nparsing ideaCity to ideaCityParsed');
