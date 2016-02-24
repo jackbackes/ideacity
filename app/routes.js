@@ -11,6 +11,8 @@ module.exports = function(app, passport, express) {
     // =====================================
 
     app.post('/acceptIdeas', function(req, res){
+        if(app.locals.verbose) console.log('requiring postToJSON');
+        var postToJSON = require('/js/dataMethods/postToJSON.js');
         console.log(req.body);      // your JSON
         req.accepts('application/json');
         //copied from server.js
@@ -22,7 +24,7 @@ module.exports = function(app, passport, express) {
             res.end('success');
         } catch(err) {
                 console.log('Could not write to JSON: ' + err);
-                res.end('error writing to JSON');
+                res.status('500').end('error writing to JSON');
         };
 //old
         /*if(app.locals.appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
