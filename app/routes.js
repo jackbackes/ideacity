@@ -6,6 +6,16 @@ module.exports = function(app, passport, express) {
     var path = require('path');
     var isTest = 'y';
 
+
+    // =====================================
+    // LOAD CSS and scripts
+    // =====================================
+
+    // GET /style.css etc
+    app.use(express.static(__dirname + '/public'));
+
+    
+
     // =====================================
     // RECEIVE POST  =======================
     // =====================================
@@ -66,12 +76,7 @@ module.exports = function(app, passport, express) {
 
     });
 
-    // =====================================
-    // LOAD CSS and scripts
-    // =====================================
 
-    // GET /style.css etc
-    app.use(express.static(__dirname + '/public'));
     
     // =====================================
     // HOME PAGE (with login links) ========
