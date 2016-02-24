@@ -15,7 +15,7 @@ var postToJSON = function(url, JSONToAppend) {
 	catch (err) {
 	  console.log('chdir: ' + err);
 	}*/
-	var ideaCity = fs.readFile(url, function(err) {
+	var ideaCity = fs.readFile('/public/private/ideas.JSON', function(err) {
 						console.log('requiring ideaCity');
 						if (err) throw err;
 						console.log('able to read');
