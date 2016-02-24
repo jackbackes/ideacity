@@ -12,7 +12,7 @@ module.exports = function(app, passport, express) {
 
     app.post('/acceptIdeas', function(req, res){
         if(app.locals.verbose) console.log('requiring postToJSON');
-        var postToJSON = require('../js/dataMethods/postToJSON.js');
+        //var postToJSON = require('../js/dataMethods/postToJSON.js');
         console.log(req.body);      // your JSON
         req.accepts('application/json');
         //copied from server.js
@@ -21,7 +21,20 @@ module.exports = function(app, passport, express) {
         console.log(formData);
         try{
             console.log('Current working directory (app.post): ' + process.cwd());
-            postToJSON.postToJSON('../public/private/ideas.JSON', formData);
+            //postToJSON.postToJSON('../public/private/ideas.JSON', formData);
+            //new content for testing
+            var ideaCity = fs.readFile('/public/private/ideas.JSON', function(err) {
+                        console.log('requiring ideaCity');
+                        if (err) throw err;
+                        console.log('able to read');
+                    }).toString();
+            try{console.log(ideaCity);} catch(err) {
+                console.log(err);
+            }
+
+
+
+            //end new content
             res.end('success');
         } catch(err) {
                 console.log('Could not write to JSON: ' + err);
