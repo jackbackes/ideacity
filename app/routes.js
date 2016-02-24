@@ -12,7 +12,30 @@ module.exports = function(app, passport, express) {
 
     app.post('/acceptIdeas', function(req, res){
         console.log(req.body);      // your JSON
-        res.send(req.body);    // echo the result back
+        //res.send(req.body);    // echo the result back
+
+        //copied from server.js
+        console.log('Method verified as POST. Initializing WRITING JSON Module.');
+        if(appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
+        //read form data as string
+        var formData = '';
+
+        if(appConfig.verbose) console.log('start formData = ' + formData);
+        if(appConfig.verbose) console.log('trying to read incoming data');
+        
+        req.on('data', function(data) {
+            formData += data.toString();
+        });
+
+        //end request
+        req.on('end', function() {
+          // empty 200 OK response for now
+            if(appConfig.verbose && formData === '') console.log('read failed. no data or event did not fire.')
+            if(appConfig.verbose && formData !== '') console.log('Completed reading data. formData = \n' + formData);
+            //postToJSON(path, formData);
+        });
+
+
     });
 
     // =====================================
