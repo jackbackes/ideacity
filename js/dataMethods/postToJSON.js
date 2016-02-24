@@ -2,6 +2,9 @@
 
 // POST to JSON
 
+var path = require('path');
+var fs = require('fs');
+
 var postToJSON = function(url, JSONToAppend) {
 	console.log('attempting to post - from server.js');
 	console.log('requiring ideaCity');
