@@ -12,13 +12,21 @@ module.exports = function(app, passport, express) {
 
     app.post('/acceptIdeas', function(req, res){
         console.log(req.body);      // your JSON
-        //res.send(req.body);    // echo the result back
-
+        req.accepts('application/json');
         //copied from server.js
         console.log('Method verified as POST. Initializing WRITING JSON Module.');
-        if(app.locals.appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
+        var formData = req.body.toString();
+        console.log(formData);
+        try{
+            postToJSON('./private/ideas.JSON', formData);}
+            res.end('success');
+            catch(err) {
+                console.log('Could not write to JSON: ' + err);
+                res.end('error writing to JSON');
+            }
+//old
+        /*if(app.locals.appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
         //read form data as string
-        var formData = '';
 
         if(app.locals.appConfig.verbose) console.log('start formData = ' + formData);
         if(app.locals.appConfig.verbose) console.log('trying to read incoming data');
@@ -35,6 +43,7 @@ module.exports = function(app, passport, express) {
             if(app.locals.appConfig.verbose && formData !== '') console.log('Completed reading data. formData = \n' + formData);
             //postToJSON(path, formData);
         });
+        */
 
 
     });
