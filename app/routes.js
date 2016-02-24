@@ -19,14 +19,24 @@ module.exports = function(app, passport, express) {
     // =====================================
 
     app.post('/acceptIdeas', function(req, res){
-        try{
-            var fs = require('fs');
-            var jsonObj = require('../public/private/ideas.JSON');
-            jsonObj[jsonObj.length] = req.body;
-            var newJSONObj = JSON.stringify(jsonObj);
-            fs.writeFileSync('/public/private/ideas.JSON',newJSONObj);
-        } catch(err) {console.log('error posting: ' + err)};
+        console.log('starting post');
+        var fs = require('fs');
 
+        console.log('requiring ideas.JSON');
+        var jsonObj = null;
+        var jsonObj = JSON.parse(fs.readFileSync('./public/private/ideas.json'));
+        //jsonObj = require('../public/private/ideas.json');
+
+        console.log('adding req.body to jsonObj');
+        console.log(jsonObj.length);
+        console.log(jsonObj.ideas.length);
+        var newIdea = JSON.stringify(req.body);
+        jsonObj.ideas[jsonObj.ideas.length] = req.body;
+        console.log(jsonObj.ideas.length);
+        var newJSONObj = JSON.stringify(jsonObj, null, 4);
+        console.log(newJSONObj);
+        try{fs.writeFileSync('./public/private/ideas.json',newJSONObj);} catch(err) {console.log(err)};
+        res.end();
 
 //old
         /*
