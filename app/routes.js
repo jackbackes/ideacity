@@ -24,6 +24,7 @@ module.exports = function(app, passport, express) {
         if(app.locals.appConfig.verbose) console.log('trying to read incoming data');
         
         req.on('data', function(data) {
+            if(app.locals.appConfig.verbose) console.log('writing: ' + data \n console.log(formData));
             formData += data.toString();
         });
 
