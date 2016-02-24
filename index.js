@@ -9,7 +9,7 @@ var pageserver = require('./js/pageserver.js');
 
 //Start the server
 
-server.Start(router.route, pageserver.serve, pageserver.reqtype, pageserver.postToJSON);
+server.Start(router.route, pageserver.serve, pageserver.reqtype);
 console.log('server started on index.js');
 
 //check authorization

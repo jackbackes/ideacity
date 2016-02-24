@@ -24,6 +24,7 @@
 	display: inline-block;
 	white-space: normal;
 	position:relative;
+	float:left;
 }
 
 .postItDescription {
@@ -51,7 +52,7 @@
 .defaultAvatar {
 	width: 80px;
 	height: 80px;
-	background: url(./images/defaultAvatar.png) 70px 0px;
+	/*background: url(./images/defaultAvatar.png) 70px 0px;*/
 	background-size: 260% 200%;
 	position:absolute; 
 	bottom:5px; right:5px;
@@ -61,7 +62,7 @@
 .defaultAvatar1 {
 	width: 80px;
 	height: 80px;
-	background: url(./images/defaultAvatar.png) 140px 0px;
+	/*background: url(./images/defaultAvatar.png) 140px 0px;*/
 	background-size: 260% 200%;
 	position:absolute; 
 	bottom:5px; right:5px;

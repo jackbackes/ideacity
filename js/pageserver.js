@@ -2,7 +2,7 @@
 console.log('loading pageserver');
 var path = require('path');
 var fs = require('fs');
-
+console.log('requirements complete');
 // Serves the page by returning the html.
 var serve = function(path) {
 
@@ -35,23 +35,7 @@ var reqtype = function(path) {
 	return type;
 };
 
-// POST to JSON
 
-var postToJSON = function(url, JSONToAppend) {
-	console.log('attempting to post - from server.js');
-	console.log('requiring ideaCity');
-	var ideaCity = fs.readFileSync(url).toString();
-	console.log('require successful \nparsing ideaCity to ideaCityParsed');
-	var ideaCityParsed = JSON.parse(ideaCity);
-	ideaCityParsed.ideas[ideaCityParsed.ideas.length] = JSON.parse(JSONToAppend);
-	console.log('parsing successful\nre-stringification test');
-	console.log(JSON.stringify(ideaCityParsed, null, "\t"));
-	fs.writeFile(url, JSON.stringify(ideaCityParsed, null, "\t"), function(err) {
-		if (err) throw err;
-		console.log('The JSON was appended successfully to ' + url);
-	});
-};
-
+console.log('starting exports');
 exports.serve = serve;
 exports.reqtype = reqtype;
-exports.postToJSON = postToJSON;

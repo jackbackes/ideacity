@@ -22,7 +22,7 @@ $(document).ready(function() {
 	//submitting an idea
 		var myForm = {};
 		$("#sendIdea").click(function(){
-			submitIdea('./private/ideas.json','#ideaForm');
+			submitIdea('./acceptIdeas','#ideaForm');
 		});
 
 });
@@ -48,11 +48,11 @@ $(document).ready(function() {
 			`<li class='postIt container jumbotron'>
 				<h3>${idea}</h3>
 				<div class="postItDescription"><p>${ideaDescription}</p></div>
-				<span>idea tag 1</span>
+				<span>${contributor}</span>
+				</li>`/*<span>idea tag 1</span>
 				<span>Upvote</span> <span>Downvote</span> <span># of votes</span>
 				<div class="defaultAvatar img-circle" style=""></div>
-				<div style="display:none;">name</div>
-				</li>`
+				<div style="display:none;">name</div>*/
 			);
 	};
 
@@ -134,7 +134,7 @@ $(document).ready(function() {
 	        xhttp.onreadystatechange = function() {
 	            console.log('onreadystatechange');
 	            if (xhttp.readyState == 4 && xhttp.status == 200) {
-	                alert(xhttp.responseText);
+	                //alert(xhttp.responseText);
 	            }
 	            else {
 	                console.log('readyState=' + xhttp.readyState + ', status: ' + xhttp.status);
