@@ -134,7 +134,7 @@ $(document).ready(function() {
 	        xhttp.onreadystatechange = function() {
 	            console.log('onreadystatechange');
 	            if (xhttp.readyState == 4 && xhttp.status == 200) {
-	                alert(xhttp.responseText);
+	                //alert(xhttp.responseText);
 	            }
 	            else {
 	                console.log('readyState=' + xhttp.readyState + ', status: ' + xhttp.status);
