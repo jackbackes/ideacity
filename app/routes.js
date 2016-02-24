@@ -21,7 +21,7 @@ module.exports = function(app, passport, express) {
         console.log(formData);
         try{
             console.log('Current working directory (app.post): ' + process.cwd());
-            postToJSON.postToJSON('/private/ideas.JSON', formData);
+            postToJSON.postToJSON('/public/private/ideas.JSON', formData);
             res.end('success');
         } catch(err) {
                 console.log('Could not write to JSON: ' + err);
