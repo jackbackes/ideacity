@@ -17,10 +17,10 @@ module.exports = function(app, passport, express) {
         req.accepts('application/json');
         //copied from server.js
         console.log('Method verified as POST. Initializing WRITING JSON Module.');
-        var formData = req.body.toString();
+        var formData = JSON.stringify(req.body);
         console.log(formData);
         try{
-            postToJSON('./private/ideas.JSON', formData);
+            postToJSON.postToJSON('./private/ideas.JSON', formData);
             res.end('success');
         } catch(err) {
                 console.log('Could not write to JSON: ' + err);
