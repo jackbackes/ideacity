@@ -8,6 +8,13 @@ var fs = require('fs');
 var postToJSON = function(url, JSONToAppend) {
 	console.log('attempting to post to ' + url + ' - from server.js');
 	console.log('Current working directory (post to JSON): ' + process.cwd());
+	try {
+	  process.chdir('/');
+	  console.log('New directory: ' + process.cwd());
+	}
+	catch (err) {
+	  console.log('chdir: ' + err);
+	}
 	console.log('requiring ideaCity');
 	var ideaCity = fs.readFile(url, function(err) {
 						if (err) throw err;
