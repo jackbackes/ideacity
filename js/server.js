@@ -25,6 +25,7 @@ console.log('running configuration tests');
 //Configuration tests==============================================
 
 //Set Database Configuration
+console.log(configDB.url);
 mongoose.connect(configDB.url); //connect to our database
 
 require('../config/passport')(passport); //pass passport for configuration
@@ -63,7 +64,13 @@ var routes = require('../app/routes.js')(app, passport, express);
 //Set Server Configuration
 	var appConfig = {
 		isTest: 'y',
-		isLive: 'n',
+		isLive: 'heroku',
+		verbose: true
+	};
+
+	app.locals.appConfig = {
+		isTest: 'y',
+		isLive: 'heroku',
 		verbose: true
 	};
 
@@ -81,13 +88,20 @@ var routes = require('../app/routes.js')(app, passport, express);
 
 //Configure host
 
-
-if(appConfig.isLive === 'y') {
-	var ideaServer = 'ideacity.thisismotive.com'
-
+if(appConfig.isLive === 'heroku') {
+	app.set('port', (process.env.PORT || 5000));
+	var ideaServer = 'ideacity.herokuapp.com';
+	app.locals.facebookAuth = configAuth.facebookAuth.callbackURL;
+} else if(appConfig.isLive === 'y') {
+	var ideaServer = 'ideacity.thisismotive.com';
+	app.locals.facebookAuth = configAuth.facebookAuth.callbackURL;
 } else {
 	var ideaServer = 'localhost';
+	app.locals.facebookAuth = configAuth.facebookAuth.localcallbackURL;
 };
+
+app.locals.ideaServer = ideaServer;
+
 	console.log('server set to ' + ideaServer);
 
 var ideaPort = process.env.PORT || 1337;
@@ -201,7 +215,13 @@ var Start = function(route, serve, reqtype, postToJSON) {
 		}
 	};
 	//http.createServer(onRequest).listen(ideaPort, ideaServer);
-	app.listen(ideaPort, ideaServer);
+	if(appConfig.isLive === 'heroku') {
+		app.listen(app.get('port'), function() {
+  			console.log('Node app is running on port', app.get('port'));
+			});
+	} else {
+		app.listen(process.env.PORT || ideaPort, process.env.YOUR_HOST || ideaServer);
+	}
 	console.log('Ideacity up and running at http://' + ideaServer + ':' + ideaPort + '/ from server.js');
 };
  
