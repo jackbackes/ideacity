@@ -22,7 +22,7 @@ $(document).ready(function() {
 	//submitting an idea
 		var myForm = {};
 		$("#sendIdea").click(function(){
-			submitIdea('./private/ideas.json','#ideaForm');
+			submitIdea('./acceptIdeas','#ideaForm');
 		});
 
 });

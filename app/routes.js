@@ -10,7 +10,7 @@ module.exports = function(app, passport, express) {
     // RECEIVE POST  =======================
     // =====================================
 
-    app.post('/', function(req, res){
+    app.post('/acceptIdeas', function(req, res){
         console.log(req.body);      // your JSON
         res.send(req.body);    // echo the result back
     });
