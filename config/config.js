@@ -1,7 +1,7 @@
 //configuration settings for the app
 
 
-module.exports={
+/*module.exports={
 	'facebook_api_key'		: 	'FB APP ID',
 	'facebook_api_secret'	: 	'FB API SECRET',
 	'callback_url'			: 	'http://localhost:3000/auth/facebook/callback',
@@ -10,7 +10,7 @@ module.exports={
 	'username'				: 	'root',
 	'password' 				: 	'',
 	'database' 				: 	'DB NAME'
-}
+}*/
 
 app.configure(function () {
 	app.use(express.cookieParser());
