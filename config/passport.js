@@ -134,7 +134,6 @@ module.exports = function(passport) {
 
     // facebook will send back the token and profile
     function(req, token, refreshToken, profile, done) {
-        console.log(profile);
         // asynchronous
         process.nextTick(function() {
 
@@ -171,6 +170,23 @@ module.exports = function(passport) {
                                         throw err;
                                     return done(null, user);
                                 });
+                            }
+                            // if there is a user but missing information, update user
+                            if (!user.facebook.name || !user.facebook.email || !user.facebook.avatar || !user.facebook.link || !user.facebook.gender) {
+                                console.log('user found but missing information');
+                                user.facebook.token = token;
+                                user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
+                                user.facebook.email = profile.emails[0].value;
+                                user.facebook.avatar = profile.picture;
+                                user.facebook.link = profile.link;
+                                user.facebook.gender = profile.gender;
+
+                                user.save(function(err) {
+                                    if (err)
+                                        throw err;
+                                    return done(null, user);
+                                });
+                                console.log('user information updated');
                             }
 
 

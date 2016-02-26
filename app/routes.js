@@ -78,11 +78,18 @@ module.exports = function(app, passport, express) {
     // =====================================
     // HOME PAGE (with login links) ========
     // =====================================
+    var facebookCallback = '';
+
     app.get('/', function(req, res) {
         //var loginCheck = isUserLoggedIn();
         res.render('index.ejs', {
             user : req.user // get the user out of session and pass to template
         }); // load the index.ejs file
+
+
+        //setting facebook callback url
+        facebookCallback = 'http://' + req.headers.host + '/auth/facebook/callback';
+        console.log('callback URL: ' + facebookCallback);
     });
 
     // =====================================
@@ -147,6 +154,10 @@ module.exports = function(app, passport, express) {
     // =====================================
     // FACEBOOK ROUTES =====================
     // =====================================
+
+
+
+
     // route for facebook authentication and login
     app.get('/auth/facebook', passport.authenticate('facebook', { 
         scope : 'email',
@@ -160,6 +171,8 @@ module.exports = function(app, passport, express) {
             successRedirect : '/',
             failureRedirect : '/'
         }));
+
+
 
     // =====================================
     // LOGOUT ==============================

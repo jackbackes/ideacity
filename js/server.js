@@ -32,6 +32,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   // we're connected!
 });
+var Schema = mongoose.Schema;
+
 
 //Configure Passport
 
