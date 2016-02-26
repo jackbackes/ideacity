@@ -19,6 +19,15 @@ $(document).ready(function() {
 		});
 
 
+	//MongoDB call
+
+
+
+
+
+	//end MongoDB call
+
+
 	//submitting an idea
 		var myForm = {};
 		$("#sendIdea").click(function(){
