@@ -162,7 +162,7 @@ module.exports = function(passport) {
                                 user.facebook.token = token;
                                 user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                                 user.facebook.email = profile.emails[0].value;
-                                user.facebook.avatar = profile.photos[0];
+                                user.facebook.avatar = profile.photos[0].value;
                                 user.facebook.link = profile.profileUrl;
                                 user.facebook.gender = profile.gender;
 
@@ -178,7 +178,7 @@ module.exports = function(passport) {
                                 user.facebook.token = token;
                                 user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                                 user.facebook.email = profile.emails[0].value;
-                                user.facebook.avatar = profile.photos[0];
+                                user.facebook.avatar = profile.photos[0].value;
                                 user.facebook.link = profile.profileUrl;
                                 user.facebook.gender = profile.gender;
 
@@ -202,7 +202,7 @@ module.exports = function(passport) {
                         newUser.facebook.token = token; // we will save the token that facebook provides to the user                    
                         newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
                         newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
-                        newUser.facebook.avatar = profile.photos[0];
+                        newUser.facebook.avatar = profile.photos[0].value;
                         newUser.facebook.link = profile.profileUrl;
                         newUser.facebook.gender = profile.gender;
 
@@ -228,7 +228,7 @@ module.exports = function(passport) {
                     user.facebook.token = token;
                     user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                     user.facebook.email = profile.emails[0].value;
-                    user.facebook.avatar = profile.photos[0];
+                    user.facebook.avatar = profile.photos[0].value;
                     user.facebook.link = profile.profileUrl;
                     user.facebook.gender = profile.gender;
 

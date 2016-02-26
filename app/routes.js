@@ -27,6 +27,25 @@ module.exports = function(app, passport, express) {
         jsonObj.ideas[jsonObj.ideas.length] = req.body;
         var newJSONObj = JSON.stringify(jsonObj, null, 4);
         try{fs.writeFileSync('./public/private/ideas.json',newJSONObj); console.log('posted new idea!');} catch(err) {console.log(err); res.end('error posting!');};
+//add mongoose
+        var Idea = require('../app/models/idea');
+        var newIdea             = new Idea();
+
+            newIdea.idea        = req.body.idea;
+            newIdea.description = req.body.ideaDescription;
+            newIdea.category    = req.body.category;
+            newIdea.postedBy    = req.user.id;
+
+        newIdea.save(function(err) {
+            if(err) throw{err};
+
+            //if successful, return the new idea
+            console.log('idea created');
+            return done(null, newIdea);
+        });
+
+//end mongoose
+
         res.end();
 
 //old
