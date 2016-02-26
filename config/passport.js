@@ -139,6 +139,7 @@ module.exports = function(passport) {
 
             // check if the user is already logged in
             if (!req.user) {
+                console.log(profile);
                 console.log('the user is not logged in!')
                 // find the user in the database based on their facebook id
                 User.findOne({ 'facebook.id' : profile.id }, function(err, user) {
