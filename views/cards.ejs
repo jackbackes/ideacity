@@ -48,136 +48,102 @@
 	<div class="container">
 		<h1>Educated City Ideas</h1>
 		<ul class="postIts jumbotron canaryYellow" id="educated">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<div class="postItDescription"><p>Idea Description</p></div>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-				<div class="defaultAvatar1 img-circle" style=""></div>
-			</li>
+
 			<!--<div class="postItShadow"></div>-->
+			<% 	console.log('ideas: ' + ideas);
+				ideas.filter(function(value){
+					return value.category === 'educated';
+				}).forEach( function( idea ) { %>
+				<li class="postIt container jumbotron">
+					<h3><%= idea.idea %></h3>
+					<p><%= idea.description %></p>
+				</li>
+
+			<% }); %>
 		</ul>
 
 
 
 		<h1>Entrepreneurial City Ideas</h1>
 		<ul class="postIts jumbotron greenPostIt" id="entrepreneurial">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
 			<!--<div class="postItShadow"></div>-->
+			<% 	console.log('ideas: ' + ideas);
+				ideas.filter(function(value){
+					return value.category === 'entrepreneurial';
+				}).forEach( function( idea ) { %>
+				<li class="postIt container jumbotron">
+					<h3><%= idea.idea %></h3>
+					<p><%= idea.description %></p>
+				</li>
+
+			<% }); %>
 		</ul>
 
 
 		<h1>Healthy City Ideas</h1>
 		<ul class="postIts jumbotron pinkPostIt" id="healthy">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
 			<!--<div class="postItShadow"></div>-->
+			<% 	console.log('ideas: ' + ideas);
+				ideas.filter(function(value){
+					return value.category === 'healthy';
+				}).forEach( function( idea ) { %>
+				<li class="postIt container jumbotron">
+					<h3><%= idea.idea %></h3>
+					<p><%= idea.description %></p>
+				</li>
+
+			<% }); %>
 		</ul>
 
 
 		<h1>Literary City Ideas</h1>
 		<ul class="postIts jumbotron redPostIt" id="literary">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
 			<!--<div class="postItShadow"></div>-->
+			<% 	console.log('ideas: ' + ideas);
+				ideas.filter(function(value){
+					return value.category === 'literary';
+				}).forEach( function( idea ) { %>
+				<li class="postIt container jumbotron">
+					<h3><%= idea.idea %></h3>
+					<p><%= idea.description %></p>
+				</li>
+
+			<% }); %>
 		</ul>
 
 
 		<h1>Physical City Ideas</h1>
 		<ul class="postIts jumbotron orangePostIt" id="physical">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<!--<div class="postItShadow"></div>-->
+
+			<% 	console.log('ideas: ' + ideas);
+				ideas.filter(function(value){
+					return value.category === 'physical';
+				}).forEach( function( idea ) { %>
+				<li class="postIt container jumbotron">
+					<h3><%= idea.idea %></h3>
+					<p><%= idea.description %></p>
+				</li>
+
+			<% }); %>
+
+
 		</ul>
+
+
+		<!--<h1>More Ideas</h1>
+		<ul class="postIts jumbotron orangePostIt" id="">
+		<% 	console.log('ideas: ' + ideas);
+			ideas.filter(function(value){
+				return value.category === 'physical';
+			}).forEach( function( idea ) { %>
+			<li class="postIt container jumbotron">
+				<h3><%= idea.idea %></h3>
+				<p><%= idea.description %></p>
+			</li>
+
+		<% }); %>
+
+		</ul>-->
 	</div>
 
 </div>

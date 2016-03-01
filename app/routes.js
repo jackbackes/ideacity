@@ -101,7 +101,16 @@ module.exports = function(app, passport, express) {
     app.get('/', function(req, res) {
         var Idea = require('../app/models/idea');
         //var loginCheck = isUserLoggedIn();
-        res.render('index.ejs', {
+        var ideaCursor = Idea.find( function(err, ideas) {
+                    res.render('index.ejs', {
+                            user : req.user,
+                            'ideas': ideas
+                        }); // load the cards.ejs file
+                });
+
+
+
+        /*res.render('index.ejs', {
             user : req.user, // get the user out of session and pass to template
             ideas: Idea.find( function(err, ideas) {
                         try{
@@ -115,25 +124,61 @@ module.exports = function(app, passport, express) {
 
         //setting facebook callback url
         facebookCallback = 'http://' + req.headers.host + '/auth/facebook/callback';
-        console.log('callback URL: ' + facebookCallback);
+        console.log('callback URL: ' + facebookCallback);*/
     });
 
     // =====================================
     // CARDS                        ========
     // =====================================
-
+    //var allIdeas = [];
     app.get('/cards', function(req, res) {
+        console.log('loading cards');
         var Idea = require('../app/models/idea');
-        var allIdeas = Idea.find( function(err, ideas) { //pass ideas to template
+        var ideaCursor = Idea.find( function(err, ideas) {
+                    res.render('cards.ejs', {
+                            'ideas': ideas
+                        }); // load the cards.ejs file
+        });
+        /*var propValue;
+        var ideaArray = ideaCursor.toArray();
+        console.log('ideaArray: ' + ideaArray[0]);
+        for( var i=0; i<ideaArray.length; i++) {
+            for(propName in ideaArray[i]) {
+                propValue = ideaArray[i][propName];
+                console.log(propValue);
+            };
+        };*/
+
+        //old code
+        /*allIdeas = Idea.find( function(err, ideas) { //find all ideas
                     try{
-                        console.log('ideas:' + ideas[0].idea + ' , ' + ideas[1].idea);
                         return ideas;
+                        for(var i = 0; i<ideas.length; i++) {
+                            allIdeas[i] = ideas[i];
+                            console.log(i);
+                            console.log(allIdeas[i]._id);
+                            console.log(allIdeas[i].idea);
+                            console.log(allIdeas[i].description);
+                        };
                     }
                     catch(err) {console.log('error finding ideas: ' + err)};
                 });
-        res.render('cards.ejs', {
-            ideas: allIdeas
-        }); // load the cards.ejs file
+        */
+
+        // new code
+
+        
+
+
+        //
+
+        // old code
+        //console.log('allIdeas: ' + allIdeas[0]);
+
+        /*allIdeas.forEach(function(value, index, arg) {
+            console.log('value: ' + value.idea + ' , ' + value.description);
+        });*/
+
     });
 
     // =====================================
