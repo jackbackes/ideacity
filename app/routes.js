@@ -99,32 +99,19 @@ module.exports = function(app, passport, express) {
     var facebookCallback = '';
 
     app.get('/', function(req, res) {
+        console.log('loading cards');
+        var mongoose = require('mongoose');
         var Idea = require('../app/models/idea');
-        //var loginCheck = isUserLoggedIn();
-        var ideaCursor = Idea.find( function(err, ideas) {
-                    res.render('index.ejs', {
-                            user : req.user,
-                            'ideas': ideas
-                        }); // load the cards.ejs file
-                });
+            
+            var ideaCursor = Idea.find().populate('postedBy').exec( function(err, ideas) {
+                        res.render('index.ejs', {
+                                user : req.user,
+                                'ideas': ideas
+                            }); // load the cards.ejs file
+            });
+            
 
 
-
-        /*res.render('index.ejs', {
-            user : req.user, // get the user out of session and pass to template
-            ideas: Idea.find( function(err, ideas) {
-                        try{
-                            console.log('ideas: ' , ideas[0], ideas[1]);
-                            return ideas;
-                        }
-                        catch(err) {console.log('error finding ideas by category: ' + err)};
-                    })
-        }); // load the index.ejs file
-
-
-        //setting facebook callback url
-        facebookCallback = 'http://' + req.headers.host + '/auth/facebook/callback';
-        console.log('callback URL: ' + facebookCallback);*/
     });
 
     // =====================================
@@ -133,51 +120,17 @@ module.exports = function(app, passport, express) {
     //var allIdeas = [];
     app.get('/cards', function(req, res) {
         console.log('loading cards');
+        var mongoose = require('mongoose');
         var Idea = require('../app/models/idea');
-        var ideaCursor = Idea.find( function(err, ideas) {
-                    res.render('cards.ejs', {
-                            'ideas': ideas
-                        }); // load the cards.ejs file
-        });
-        /*var propValue;
-        var ideaArray = ideaCursor.toArray();
-        console.log('ideaArray: ' + ideaArray[0]);
-        for( var i=0; i<ideaArray.length; i++) {
-            for(propName in ideaArray[i]) {
-                propValue = ideaArray[i][propName];
-                console.log(propValue);
-            };
-        };*/
+            
+            var ideaCursor = Idea.find().populate('postedBy').exec( function(err, ideas) {
+                        res.render('cards.ejs', {
+                                user : req.user,
+                                'ideas': ideas
+                            }); // load the cards.ejs file
+            });
+            
 
-        //old code
-        /*allIdeas = Idea.find( function(err, ideas) { //find all ideas
-                    try{
-                        return ideas;
-                        for(var i = 0; i<ideas.length; i++) {
-                            allIdeas[i] = ideas[i];
-                            console.log(i);
-                            console.log(allIdeas[i]._id);
-                            console.log(allIdeas[i].idea);
-                            console.log(allIdeas[i].description);
-                        };
-                    }
-                    catch(err) {console.log('error finding ideas: ' + err)};
-                });
-        */
-
-        // new code
-
-        
-
-
-        //
-
-        // old code
-        //console.log('allIdeas: ' + allIdeas[0]);
-
-        /*allIdeas.forEach(function(value, index, arg) {
-            console.log('value: ' + value.idea + ' , ' + value.description);
-        });*/
 
     });
 

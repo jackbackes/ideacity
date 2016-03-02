@@ -10,7 +10,9 @@ var userSchema = mongoose.Schema({
         email        : String,
         password     : String,
         fullName     : String,
-        phone        : String
+        phone        : String,
+        avatar       : String,
+        link         : String
     },
     facebook         : {
         id           : String,
@@ -25,7 +27,8 @@ var userSchema = mongoose.Schema({
         id           : String,
         token        : String,
         displayName  : String,
-        username     : String
+        username     : String,
+        avatar       : String
     },
     google           : {
         id           : String,
@@ -43,6 +46,13 @@ var userSchema = mongoose.Schema({
         ideas        : Array,
         contributions: Array,
         score        : Number    
+    },
+    permissions      : {
+        admin        : 
+        {
+            type     : Boolean,
+            default  : false
+        }
     }
 
 });

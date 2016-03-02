@@ -2,429 +2,729 @@
     "ideas": [
         {
             "idea": "Welcoming / Intentionally working to connect all the new transplants",
-            "ideaDescription": "We have thousands of people moving to Dallas each year.  As a transplant myself I find that I gravitate towards other transplants because they are willing to embrace me and make a place for me.  Historically rooted people, groups and institutions are only willing to open their arms to newcomers if they adopt the Dallas way.   As a city of innovation we need to be open to the new ways of doing things and experiences that are coming with all our new neighbors. ",
+            "description": "We have thousands of people moving to Dallas each year.  As a transplant myself I find that I gravitate towards other transplants because they are willing to embrace me and make a place for me.  Historically rooted people, groups and institutions are only willing to open their arms to newcomers if they adopt the Dallas way.   As a city of innovation we need to be open to the new ways of doing things and experiences that are coming with all our new neighbors. ",
             "category": "entrepreneurial",
             "contributor": "amber.backes.3"
         },
         {
             "idea": "Innovation is in our DNA!  Let’s do it!",
-            "ideaDescription": "",
+            "description": "",
             "category": "innovative",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "App to report pot holes!",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Kids need to walk to school safely",
-            "ideaDescription": "",
+            "description": "",
             "category": "educated",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Prioritize education",
-            "ideaDescription": "",
+            "description": "",
             "category": "educated",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Longer library hours ‘all day everyday’",
-            "ideaDescription": "",
+            "description": "",
             "category": "educated",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Bike lanes to encourage biking",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Connectivity of nodes (transit / walking)",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Take down 345",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Maps for Bus Routes",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Dedicated bus lanes (and trolley lanes)",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Bike trails!",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Bike sharing",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Car2Go or similar",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Bike lanes to encourage biking",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "More submarines and use The Trinity River for transportation",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Walkability",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "DART connections – to urban areas",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Repair roads in East Dallas",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Scrap I-345",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Tear down I-345",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Bike station for rent ",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "More free parking spots (by Jocelyn, age 7)",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Watch the road while driving (by Jocelyn, age 7)",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Real-time GPS Tracking Map of Public Transport",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Bike paths alongside main roads/highways",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Better broadband!  Better internet infrastructure!",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Connect Deep Ellum and Downtown",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Make Dallas WALKABLE",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Make Dallas BIKEABLE",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Live map for the 722 D Link",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Encourage walking with better side-walks",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Revitalize the urban core",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Connect people who walk or bike to places that matter!",
-            "ideaDescription": "",
+            "description": "",
             "category": "physical",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Free WIFI",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Free WIFI Please",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Free WIFI",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Free WIFI in major areas",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "WIFI Center – Computers and Free WIFI in South Dallas",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Free WIFI",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Connectivity",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Use meditating technologies to break down barriers and get to trust",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "3D Printer in every Dallas Library!",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Green space in Southeast Dallas – gardens – farming",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Clean up areas – make less litter",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "30 mins promotes active health",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Stop texting while driving – please!",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Children respect your elders",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Fix broken or damaged roads",
-            "ideaDescription": "",
+            "description": "",
             "category": "healthy",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Free scotch",
-            "ideaDescription": "",
+            "description": "",
             "category": "literary",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Stop the Playa Hating",
-            "ideaDescription": "",
+            "description": "",
             "category": "literary",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "The DEC",
-            "ideaDescription": "",
+            "description": "",
             "category": "entrepreneurial",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Support the startup community",
-            "ideaDescription": "",
+            "description": "",
             "category": "entrepreneurial",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Use Eco Dev dollars to support startups, not chains or bad real estate projects",
-            "ideaDescription": "",
+            "description": "",
             "category": "entrepreneurial",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "#startupmecca Visit Alto211 @ 211 Ervay\\",
-            "ideaDescription": "",
+            "description": "",
             "category": "entrepreneurial",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Be more startup friendly",
-            "ideaDescription": "",
+            "description": "",
             "category": "entrepreneurial",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "“Let Everyone In” – Free events like Festival of Ideas",
-            "ideaDescription": "",
+            "description": "",
             "category": "political",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "More tolerance for differently abled individuals",
-            "ideaDescription": "",
+            "description": "",
             "category": "political",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Finish changing all parking meters to chargeable",
-            "ideaDescription": "",
+            "description": "",
             "category": "political",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Use technology to truly connect people using principles of captology",
-            "ideaDescription": "",
+            "description": "",
             "category": "innovative",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         },
         {
             "idea": "Go Solar!",
-            "ideaDescription": "",
+            "description": "",
             "category": "innovative",
             "contributor": "DallasIdeas",
-            "date/time": "2015 02 28 15 00 00"
+            "postedBy" : {
+               "$oid": "56d72ab1efa0678cfb9d80e0"
+            },
+            "createdAt" : {
+                "$date" : "2015-02-28"
+            }
         }
     ]
 }

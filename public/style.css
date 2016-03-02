@@ -27,8 +27,13 @@
 	float:left;
 }
 
+.postItTitle {
+	max-height:150px;
+	overflow-y: scroll;
+}
+
 .postItDescription {
-	max-height:100px;
+	max-height:150px;
 	overflow-y: scroll;
 }
 
@@ -56,7 +61,15 @@
 	background-size: 260% 200%;
 	position:absolute; 
 	bottom:5px; right:5px;
+	border-radius: 40px;
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+}
+
+.postItName {
+	position:absolute; 
+	bottom:5px; right:90px;
+	border-radius: 40px;
 }
 
 .defaultAvatar1 {
