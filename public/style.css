@@ -2,14 +2,73 @@
 
 }
 
+.header-panel {
+    background-color: #009587;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    top: 0px;
+}
+
+.header-panel nav {
+	margin-bottom: 0px;
+}
+
+.header-panel h1 {
+    color: #fff;
+    padding-left: 35px;
+}
+
+.header-panel > a {
+	margin: 20px 1px;
+}
+
+.header-panel > div {
+    position: relative;
+    height: 100%;
+}
+
+#add-my-idea {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	z-index: 200;
+}
+
+.bottomRight {
+	bottom: 0;
+	padding: 23px 12px 23px 15px;
+	position: fixed;
+	right: 0;
+	white-space: nowrap;
+}
+
+.addButton {
+	height: 56px;
+	display: block;
+	z-index: 300;
+}
+
+.addButton > i {
+	pointer-events: none;
+}
+
+.tooltip {
+	z-index: 99999;
+	pointer-events: none;
+}
+
+
 .top-container {
 	margin-top: 20px;
 }
 
+
+
 .postIts {
 	width: 100%;
-	overflow-x: scroll;
-	white-space: nowrap;
 	position:relative;
 	float:left;
 	display:block;
@@ -24,17 +83,21 @@
 	display: inline-block;
 	white-space: normal;
 	position:relative;
-	float:left;
+	text-align: center;
+	vertical-align: top;
+	overflow-y: scroll;
+}
+
+.postIt * {
+	text-align: initial;
 }
 
 .postItTitle {
-	max-height:150px;
-	overflow-y: scroll;
+
 }
 
 .postItDescription {
-	max-height:150px;
-	overflow-y: scroll;
+
 }
 
 .postItShadow {
@@ -82,22 +145,22 @@
 
 }
 
-.canaryYellow > li {
+.canaryYellow > span {
 	background-color: rgb(253, 253, 150) !important;
 }
 
-.greenPostIt > li {
+.greenPostIt > span {
 	background-color: rgb(122, 209, 42) !important;
 }
 
-.pinkPostIt > li {
+.pinkPostIt > span {
 	background-color: rgb(249, 160, 171) !important;
 }
 
-.orangePostIt > li {
+.orangePostIt > span {
 		background-color: rgb(243, 141, 37) !important;
 }
 
-.redPostIt > li {
+.redPostIt > span {
 		background-color: rgb(244, 61, 99) !important;
 }
