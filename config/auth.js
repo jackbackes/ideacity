@@ -1,6 +1,11 @@
 // config/auth.js
 
 console.log('getting config.auth.')
+var url = require('url');
+var path = require('path');
+
+var callbackHost = url.host;
+console.log('callbackHost: ' + callbackHost);
 
 // expose our config directly to our application using module.exports
 module.exports = {

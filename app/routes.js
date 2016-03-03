@@ -18,79 +18,120 @@ module.exports = function(app, passport, express) {
     // RECEIVE POST  =======================
     // =====================================
 
-    app.post('/acceptIdeas', function(req, res){
-        console.log('starting post');
-        var fs = require('fs');
-        var jsonObj = null;
-        var jsonObj = JSON.parse(fs.readFileSync('./public/private/ideas.json'));
-        var newIdea = JSON.stringify(req.body);
-        jsonObj.ideas[jsonObj.ideas.length] = req.body;
-        var newJSONObj = JSON.stringify(jsonObj, null, 4);
-        try{fs.writeFileSync('./public/private/ideas.json',newJSONObj); console.log('posted new idea!');} catch(err) {console.log(err); res.end('error posting!');};
-        res.end();
+    
 
-//old
-        /*
-        try{
-            console.log('Current working directory (app.post): ' + process.cwd());
-            //postToJSON.postToJSON('../public/private/ideas.JSON', formData);
-            //new content for testing
-            var ideaCity = fs.readFileSync('/public/private/ideas.JSON').toString();
-            try{console.log('ideaCity: ' + ideaCity);} catch(err) {
-                console.log(err);
+// =========================================
+// HOMEPAGE ROUTING (not logins) ===========
+// =========================================
+
+    // =====================================
+    // POPULATE IDEAS ======================
+    // =====================================
+
+    app.get('/getIdeas', function(req, res){
+        var Idea = require('../app/models/idea');
+        var findIdeas = Idea.find( function(err, ideas) {
+            try{
+                console.log('ideas by category: ' + ideas);
+                return ideas;
             }
-
-
-
-            //end new content
-            res.end('success');
-        } catch(err) {
-                console.log('Could not write to JSON: ' + err);
-                res.status('500').end('error writing to JSON');
-        };
-
-
-        if(app.locals.appConfig.verbose) console.log('[200] ' + req.method + ' to req.url = ' + req.url);
-        //read form data as string
-
-        if(app.locals.appConfig.verbose) console.log('start formData = ' + formData);
-        if(app.locals.appConfig.verbose) console.log('trying to read incoming data');
-        
-        req.on('data', function(data) {
-            if(app.locals.appConfig.verbose) console.log('writing: ' + data + console.log(formData));
-            formData += data.toString();
+            catch(err) {console.log('error finding ideas by category: ' + err)};
         });
+    });
 
-        //end request
-        req.on('end', function() {
-          // empty 200 OK response for now
-            if(app.locals.appConfig.verbose && formData === '') console.log('read failed. no data or event did not fire.')
-            if(app.locals.appConfig.verbose && formData !== '') console.log('Completed reading data. formData = \n' + formData);
-            //postToJSON(path, formData);
-        });
-        */
 
+
+    // =====================================
+    // CREATE IDEAS ========================
+    // =====================================
+
+    app.post('/acceptIdeas', function(req, res){
+        console.log('Creating Idea.');
+
+        // USE JSON ============================
+                var fs = require('fs');
+                var jsonObj = null;
+                var jsonObj = JSON.parse(fs.readFileSync('./public/private/ideas.json'));
+                var newIdea = JSON.stringify(req.body);
+                jsonObj.ideas[jsonObj.ideas.length] = req.body;
+                var newJSONObj = JSON.stringify(jsonObj, null, 4);
+                try{fs.writeFileSync('./public/private/ideas.json',newJSONObj); console.log('posted new idea!');} catch(err) {console.log(err); res.end('error posting!');};
+
+        // USE MONGOOSE ========================
+                var Idea = require('../app/models/idea');
+                var newIdea             = new Idea();
+
+                    newIdea.idea        = req.body.idea;
+                    newIdea.description = req.body.ideaDescription;
+                    newIdea.category    = req.body.category;
+                    newIdea.postedBy    = req.user.id;
+                    newIdea.createdAt   = Date.now();
+                    newIdea.updatedAt   = Date.now();
+
+                newIdea.save(function(err) {
+                    if(err) throw err;
+
+                    //if successful, return the new idea
+                    console.log('idea created');
+                    //return done(null, newIdea);
+                });
+
+        //======================================
+
+        res.end();
 
     });
 
 
+
+    // =====================================
+    // DESTROY IDEAS =======================
+    // =====================================
+
+
+// =========================================
+// LOGIN ===================================
+// =========================================
     
     // =====================================
     // HOME PAGE (with login links) ========
     // =====================================
+    var facebookCallback = '';
+
     app.get('/', function(req, res) {
-        //var loginCheck = isUserLoggedIn();
-        res.render('index.ejs', {
-            user : req.user // get the user out of session and pass to template
-        }); // load the index.ejs file
+        console.log('loading cards');
+        var mongoose = require('mongoose');
+        var Idea = require('../app/models/idea');
+            
+            var ideaCursor = Idea.find().populate('postedBy').exec( function(err, ideas) {
+                        res.render('index.ejs', {
+                                user : req.user,
+                                'ideas': ideas
+                            }); // load the cards.ejs file
+            });
+            
+
+
     });
 
     // =====================================
     // CARDS                        ========
     // =====================================
-
+    //var allIdeas = [];
     app.get('/cards', function(req, res) {
-        res.render('cards.ejs'); // load the cards.ejs file
+        console.log('loading cards');
+        var mongoose = require('mongoose');
+        var Idea = require('../app/models/idea');
+            
+            var ideaCursor = Idea.find().populate('postedBy').exec( function(err, ideas) {
+                        res.render('cards.ejs', {
+                                user : req.user,
+                                'ideas': ideas
+                            }); // load the cards.ejs file
+            });
+            
+
+
     });
 
     // =====================================
@@ -147,6 +188,10 @@ module.exports = function(app, passport, express) {
     // =====================================
     // FACEBOOK ROUTES =====================
     // =====================================
+
+
+
+
     // route for facebook authentication and login
     app.get('/auth/facebook', passport.authenticate('facebook', { 
         scope : 'email',
@@ -160,6 +205,8 @@ module.exports = function(app, passport, express) {
             successRedirect : '/',
             failureRedirect : '/'
         }));
+
+
 
     // =====================================
     // LOGOUT ==============================

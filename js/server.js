@@ -24,9 +24,18 @@ var prompt = require('prompt');
 console.log('running configuration tests');
 //Configuration tests==============================================
 
-//Set Database Configuration
+//Set Mongo/Mongoose Database Configuration
 console.log(configDB.url);
 mongoose.connect(configDB.url); //connect to our database
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+});
+var Schema = mongoose.Schema;
+
+
+//Configure Passport
 
 require('../config/passport')(passport); //pass passport for configuration
 

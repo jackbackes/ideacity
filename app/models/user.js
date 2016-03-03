@@ -9,24 +9,50 @@ var userSchema = mongoose.Schema({
     local            : {
         email        : String,
         password     : String,
+        fullName     : String,
+        phone        : String,
+        avatar       : String,
+        link         : String
     },
     facebook         : {
         id           : String,
         token        : String,
         email        : String,
-        name         : String
+        name         : String,
+        avatar       : String,
+        link         : String,
+        gender       : String
     },
     twitter          : {
         id           : String,
         token        : String,
         displayName  : String,
-        username     : String
+        username     : String,
+        avatar       : String
     },
     google           : {
         id           : String,
         token        : String,
         email        : String,
         name         : String
+    },
+    info             : {
+        createdAt    : Date,
+        updatedAt    : Date,
+        admin        : Boolean      
+    },
+    int              : {
+        comments     : Array,
+        ideas        : Array,
+        contributions: Array,
+        score        : Number    
+    },
+    permissions      : {
+        admin        : 
+        {
+            type     : Boolean,
+            default  : false
+        }
     }
 
 });

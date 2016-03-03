@@ -1,7 +1,14 @@
 
 
+//bootstrap
+	//material template
+	$.material.init();
 
-$.material.init();
+	//tooltip optin
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
 
 //jquery calls
 $(document).ready(function() {
@@ -9,7 +16,7 @@ $(document).ready(function() {
 		console.log("jQuery up and running on js.js");
 
 	//JSON call
-		var cityOfIdeas;
+	/*	var cityOfIdeas;
 		$.getJSON('./private/ideas.json', function(data) {
 			cityOfIdeas = data.ideas;
 			console.log('printing JSON:');
@@ -17,6 +24,22 @@ $(document).ready(function() {
 			console.log(cityOfIdeas.length);
 			populateIdeas(cityOfIdeas);
 		});
+		*/
+
+
+	//request random avatars for sampling
+
+
+	$.ajax({
+	  url: 'https://randomuser.me/api/?results=100',
+	  dataType: 'json',
+	  success: function(data){
+	    console.log(data);
+	    $(".noAvatar").each( function( index ) {
+	    	$(this).attr("src", data.results[index].user.picture.thumbnail)
+	    })
+	  }
+	});
 
 
 	//submitting an idea

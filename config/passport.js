@@ -134,12 +134,12 @@ module.exports = function(passport) {
 
     // facebook will send back the token and profile
     function(req, token, refreshToken, profile, done) {
-        console.log(profile);
         // asynchronous
         process.nextTick(function() {
 
             // check if the user is already logged in
             if (!req.user) {
+                console.log(profile);
                 console.log('the user is not logged in!')
                 // find the user in the database based on their facebook id
                 User.findOne({ 'facebook.id' : profile.id }, function(err, user) {
@@ -162,12 +162,32 @@ module.exports = function(passport) {
                                 user.facebook.token = token;
                                 user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                                 user.facebook.email = profile.emails[0].value;
+                                user.facebook.avatar = profile.photos[0].value;
+                                user.facebook.link = profile.profileUrl;
+                                user.facebook.gender = profile.gender;
 
                                 user.save(function(err) {
                                     if (err)
                                         throw err;
                                     return done(null, user);
                                 });
+                            }
+                            // if there is a user but missing information, update user
+                            if (!user.facebook.name || !user.facebook.email || !user.facebook.avatar || !user.facebook.link || !user.facebook.gender) {
+                                console.log('user found but missing information');
+                                user.facebook.token = token;
+                                user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
+                                user.facebook.email = profile.emails[0].value;
+                                user.facebook.avatar = profile.photos[0].value;
+                                user.facebook.link = profile.profileUrl;
+                                user.facebook.gender = profile.gender;
+
+                                user.save(function(err) {
+                                    if (err)
+                                        throw err;
+                                    return done(null, user);
+                                });
+                                console.log('user information updated');
                             }
 
 
@@ -182,6 +202,9 @@ module.exports = function(passport) {
                         newUser.facebook.token = token; // we will save the token that facebook provides to the user                    
                         newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
                         newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+                        newUser.facebook.avatar = profile.photos[0].value;
+                        newUser.facebook.link = profile.profileUrl;
+                        newUser.facebook.gender = profile.gender;
 
                         // save our user to the database
                         newUser.save(function(err) {
@@ -205,6 +228,9 @@ module.exports = function(passport) {
                     user.facebook.token = token;
                     user.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
                     user.facebook.email = profile.emails[0].value;
+                    user.facebook.avatar = profile.photos[0].value;
+                    user.facebook.link = profile.profileUrl;
+                    user.facebook.gender = profile.gender;
 
                     // save the user
                     user.save(function(err) {

@@ -48,136 +48,115 @@
 	<div class="container">
 		<h1>Educated City Ideas</h1>
 		<ul class="postIts jumbotron canaryYellow" id="educated">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<div class="postItDescription"><p>Idea Description</p></div>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-				<div class="defaultAvatar1 img-circle" style=""></div>
-			</li>
+
 			<!--<div class="postItShadow"></div>-->
+			<% 	
+				function populateCards( idea ) { 
+					console.log(idea.category + ': ' + idea.idea);
+					console.log(typeof(idea.postedBy));
+
+				%>
+				<li class="postIt container jumbotron">
+					<h3><%= idea.idea %></h3>
+					<div class="postItDescription"><p><%= idea.description %></p></div>
+
+						<% if(typeof(idea.postedBy) !== 'undefined' && idea.postedBy !== null ) {
+							console.log('test');
+							if(typeof(idea.postedBy.facebook.name)!=='undefined' && typeof(idea.postedBy.facebook.name)!== null && idea.postedBy.facebook.name !== "")
+								{ 
+								//facebook template
+								%>
+									<a target="_blank" href="<%=idea.postedBy.facebook.link%>" >
+										<img class="defaultAvatar" src="<%= idea.postedBy.facebook.avatar %>" data-toggle="tooltip" data-placement="left" title="<%=idea.postedBy.facebook.name%>">
+									</a>
+
+							<% } else if( typeof(idea.postedBy.local.fullName) !== 'undefined' && typeof(idea.postedBy.local.fullName)!== "" )
+								{
+
+								%>
+										<span class="postItName" >
+											<%=idea.postedBy.local.fullName%>
+										</span>
+								<%
+								if(idea.postedBy.local.avatar) {
+								//if there is a local avatar
+								%>
+									<a target="_blank" href="<%= idea.postedBy.local.link %>">
+										<img class="defaultAvatar " src="<%= idea.postedBy.local.avatar %>" data-toggle="tooltip" data-placement="left" title="<%= idea.postedBy.local.fullName %>">
+									</a>
+								<%
+
+								} else {
+								//if there is no avatar
+								%>
+										<img class="defaultAvatar noAvatar" src="" data-toggle="tooltip" data-placement="left" title="<%=idea.postedBy.local.fullName%>">
+
+
+							  <%}}};%> 
+
+
+				</li>
+
+			<% }; %>
+
+			<%
+				ideas.filter(function(value){
+					return value.category === 'educated';
+				}).forEach( populateCards);
+			%>
 		</ul>
 
 
 
 		<h1>Entrepreneurial City Ideas</h1>
 		<ul class="postIts jumbotron greenPostIt" id="entrepreneurial">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
 			<!--<div class="postItShadow"></div>-->
+			<% 	
+				ideas.filter(function(value){
+					return value.category === 'entrepreneurial';
+				}).forEach( populateCards);
+
+				 %>
 		</ul>
 
 
 		<h1>Healthy City Ideas</h1>
 		<ul class="postIts jumbotron pinkPostIt" id="healthy">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
 			<!--<div class="postItShadow"></div>-->
+			<% 	
+				ideas.filter(function(value){
+					return value.category === 'healthy';
+					}).forEach( populateCards);
+			%>
 		</ul>
 
 
 		<h1>Literary City Ideas</h1>
 		<ul class="postIts jumbotron redPostIt" id="literary">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
 			<!--<div class="postItShadow"></div>-->
+			<% 	
+				ideas.filter(function(value){
+					return value.category === 'literary';
+				}).forEach( populateCards ); 
+			%>
 		</ul>
 
 
 		<h1>Physical City Ideas</h1>
 		<ul class="postIts jumbotron orangePostIt" id="physical">
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<li class="postIt container jumbotron">
-				<h3>This is my idea</h3>
-				<p>Idea Description</p>
-				<span>idea tag 1</span> <span>idea tag 2</span>
-				<span>Upvote</span> <span>Downvote</span> <span># of Votes</span>
-			</li>
-			<!--<div class="postItShadow"></div>-->
+
+			<% 	
+				ideas.filter(function(value){
+					return value.category === 'physical';
+				}).forEach( populateCards );
+
+			%>
+
+
 		</ul>
+
+
+		
 	</div>
 
 </div>
