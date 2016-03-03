@@ -24,25 +24,35 @@
 <div class="container-fluid header-panel">
 	<div class="row" style="height: 0px"></div>
 	<div class="row">
-		<div class="col-sm-6"><h3 style="color:white;"><span class="material-icons">rate_review</span>IdeaCity Dallas</h1>
+		<div class="col-sm-4">
+			<h3 style="color:white; margin-top: 15px; margin-bottom: 0px;">
+				<span class="material-icons">rate_review</span>
+				IdeaCity Dallas</h3>
 		</div>
-		<div class="col-sm-6">
+
 	    <!-- IF USER IS LOGGED IN - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	        <% if(user) {%> <p> Welcome <a href="/profile"><%= user.facebook.name %></a> ! </p> <a href="/logout" class="btn btn-primary">Logout</a>
+	        <% if(user) {%> 
+			<div class="col-sm-4">
+	        <h4 style="padding-top: 10px;"> Welcome <a href="/profile" style="color: #03a9f4;"><%= user.facebook.name %></a> ! </h4> 
+	        </div>
+	        <div class="col-sm-4">
+	        <a href="/logout" class="btn btn-primary btn-raised">Logout</a>
+	        </div>
 
 
-			<div class="container jumbotron text-center">
+			<!--<div class="container jumbotron text-center">
 				<div class="col-md-3">
 					<button class="btn btn-raised btn-info" data-toggle="collapse" data-target="#add-my-idea">Add Your Idea to IdeaCity!</button>
 				</div>
-			</div>
-		</div>
+			</div>-->
+	</div>
 
 
 
 	    <!-- IF USER IS NOT LOGGED IN  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	        <% } else { %>         
-	        <a href="/auth/facebook" class="btn btn-raised btn-danger"><span class="fa fa-facebook"></span>Login With Facebook to add your idea!</a>
+	        <% } else { %>
+	        <div class="coll-sm-8" style="text-align: right;">         
+	        <a href="/auth/facebook" class="btn btn-raised btn-danger" style="margin-right: 10px;"><span class="fa fa-facebook"></span>Login With Facebook to add your idea!</a>
 
 	    </div>
 
@@ -309,6 +319,8 @@ if(false) {
 	<button type="button" class="btn btn-primary" id="sendIdea" >Submit My Idea</button>
 </div>
 
+<% if(user) { %>
+
 <div class="bottomRight">
 	<a href="#0"  data-placement="top" title="Add Your Idea to IdeaCity!" style="width:56px; height:56px; display: block;" data-toggle="collapse" data-target="#add-my-idea">
 		<span class="addButton btn btn-danger btn-fab" >
@@ -316,7 +328,7 @@ if(false) {
 	</span></a>
 </div>
 
-
+<% }; %>
 
 	<script src="./js/jquery.js"></script>
 	<script src="./js/npm.js"></script>
