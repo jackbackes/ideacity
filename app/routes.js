@@ -103,7 +103,7 @@ module.exports = function(app, passport, express) {
         var mongoose = require('mongoose');
         var Idea = require('../app/models/idea');
             
-            var ideaCursor = Idea.find().populate('postedBy').exec( function(err, ideas) {
+            var ideaCursor = Idea.find().populate('postedBy').sort({'createdAt' : -1}).exec( function(err, ideas) {
                         res.render('index.ejs', {
                                 user : req.user,
                                 'ideas': ideas
